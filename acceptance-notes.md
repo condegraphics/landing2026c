@@ -20,6 +20,8 @@ La actualización posterior reemplazó el fondo del hero por `img/hero-2026-ok.j
 
 La versión actual incorpora énfasis editorial SEO selectivo: azul institucional para frases de intención y `strong` para pocos conceptos de servicio, beneficio y conversión. Se evitó resaltar bloques completos o repetir el recurso en cada línea.
 
+La revisión visual posterior redujo todos los H2 de escritorio a 56px con line-height de 67px, retiró el marcador `01` de la introducción, convirtió “Analizar mi proyecto” en un botón outline azul sin relleno y aumentó el aire entre etiquetas, títulos, párrafos, grillas y CTAs.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.

@@ -30,7 +30,7 @@
 - **Familia única:** Merriweather Sans, cargada desde Google Fonts.
 - **Titulares:** Merriweather Sans, peso 800, aplicado a `h1`, `h2` y `h3`.
 - **Demás textos:** Merriweather Sans, peso 300, aplicado a cuerpo, navegación, botones, etiquetas, formularios y textos auxiliares.
-- **Escala:** `clamp()` para titulares, cuerpo base de 16px y lectura móvil prioritaria.
+- **Escala:** H2 de escritorio en 56px con line-height de 67px; H1 de escritorio en 86px con line-height de 96px; cuerpo base de 16px y lectura móvil prioritaria.
 
 ## Composición
 
@@ -62,6 +62,10 @@ No se prometen posiciones, menciones, citas, ROI ni resultados garantizados. Se 
 ## Énfasis SEO editorial
 
 La landing utiliza énfasis de forma selectiva, no decorativa. Las frases estratégicas de intención —como visibilidad, búsquedas, presencia orgánica, autoridad, conversión y oportunidad— pueden destacarse con azul institucional; los conceptos de servicio o beneficio más relevantes pueden usar `strong` en Merriweather Sans 800. El criterio es reforzar comprensión y escaneabilidad sin colorear cada palabra ni convertir el copy en una lista de keywords.
+
+## Ritmo y aire
+
+Se amplió el espaciado entre eyebrow, títulos, párrafos, listas y CTA. Las secciones principales utilizan paddings verticales más generosos y las grillas tienen gaps mayores en escritorio. En móvil se conservan valores más compactos para evitar desplazamientos innecesarios, sin volver a amontonar los elementos.
 
 ## Tracking
 
