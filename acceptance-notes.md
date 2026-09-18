@@ -16,6 +16,8 @@ La URL pública respondió con HTTP 200. El título público es `SEO, SEM y Web 
 
 La revisión visual confirmó la composición dividida del hero, el predominio de azul noche, la lectura blanca sobre fondo oscuro, el contraste con la imagen AI, la sección central clara y el cierre con contacto, formulario y footer. La página tiene fallback visual para animaciones CSS y una ruta `prefers-reduced-motion`.
 
+La actualización posterior reemplazó la imagen superpuesta del hero por `img/hero-2026.jpg` como único fondo visual full width, conservando un overlay azul para la legibilidad del texto.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.

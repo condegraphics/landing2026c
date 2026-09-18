@@ -34,7 +34,7 @@
 
 ## Composición
 
-El hero usa una composición dividida con texto a la izquierda y la imagen `img/11062.jpg` a la derecha. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
+El hero utiliza exclusivamente `img/hero-2026.jpg` como fondo full width, con un overlay azul para asegurar el contraste del texto. Ya no contiene una imagen superpuesta independiente. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
 
 ## Movimiento
 
@@ -43,7 +43,8 @@ Se utiliza `animation-timeline: view()` para revelar bloques durante el desplaza
 ## Activos
 
 - `img/logo-conde-graphics-agencia-seo-argentina-260px.png`: logo oficial disponible.
-- `img/11062.jpg`: tecla AI, hero.
+- `img/hero-2026.jpg`: fondo full width de la portada.
+- `img/11062.jpg`: tecla AI, disponible como activo secundario.
 - `img/116836.jpg`: Google, beneficios SEO.
 - `img/54251.jpg`: círculo tecnológico, sección AI.
 - `img/50332.jpg`: reunión y datos, método.
