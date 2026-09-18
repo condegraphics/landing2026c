@@ -89,14 +89,15 @@
   .button-light { background: var(--white); color: var(--blue-night); }
   .button-light:hover { background: #DCEFFF; }
 
-  .hero { min-height: min(860px, 100svh); overflow: hidden; padding: 10.7rem 0 5rem; }
+  .hero { aspect-ratio: 1920 / 934; min-height: 0; overflow: hidden; padding: 7.6rem 0 4.5rem; }
   .hero-media, .hero-overlay, .ai-media, .ai-overlay { inset: 0; position: absolute; }
-  .hero-media { background-image: url('img/hero-2026.jpg'); background-position: center; background-size: cover; opacity: .82; }
+  .hero-media { background-image: url('img/hero-2026-ok.jpg'); background-position: center; background-size: cover; opacity: .82; }
   .hero-overlay { background: linear-gradient(90deg, rgba(0,33,94,.88) 0%, rgba(0,33,94,.63) 52%, rgba(0,33,94,.26) 100%); }
   .hero-grid { align-items: center; display: grid; min-height: 570px; position: relative; z-index: 1; }
   .hero-copy { align-self: center; }
   .hero-copy .eyebrow { margin-bottom: 1.5rem; }
-  .hero-copy h1 { margin-bottom: 1.8rem; }
+  .hero-copy { max-width: 45rem; }
+  .hero-copy h1 { font-size: 86px; line-height: 96px; margin-bottom: 1.8rem; max-width: 11ch; }
   .hero-lead { color: rgba(255,255,255,.88); font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 29ch; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
   .hero-note { border-left: 1px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
@@ -282,7 +283,7 @@
   .desktop-nav { gap: 1rem; }
   .desktop-nav a { font-size: .68rem; }
   .hero-grid { gap: 3.5rem; grid-template-columns: 1fr; }
-  .hero { min-height: auto; padding-bottom: 7.5rem; }
+  .hero { aspect-ratio: auto; min-height: auto; padding-bottom: 7.5rem; }
   .hero-copy h1 { max-width: 12ch; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: auto; padding-bottom: 5.5rem; }
@@ -305,8 +306,9 @@
   .desktop-nav { display: none; }
   .header-cta { font-size: .64rem; }
   .hero { padding-top: 8.2rem; }
+  .hero { aspect-ratio: auto; }
   .hero-grid { min-height: auto; }
-  .hero-copy h1 { margin-bottom: 1.25rem; }
+  .hero-copy h1 { font-size: clamp(3rem, 13vw, 5.2rem); line-height: 1.08; margin-bottom: 1.25rem; max-width: 11ch; }
   .hero-lead { font-size: 1.13rem; }
   .hero-actions { align-items: stretch; flex-direction: column; max-width: 20rem; }
   .hero-actions .button { width: 100%; }

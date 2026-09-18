@@ -16,7 +16,7 @@ La URL pública respondió con HTTP 200. El título público es `SEO, SEM y Web 
 
 La revisión visual confirmó la composición dividida del hero, el predominio de azul noche, la lectura blanca sobre fondo oscuro, el contraste con la imagen AI, la sección central clara y el cierre con contacto, formulario y footer. La página tiene fallback visual para animaciones CSS y una ruta `prefers-reduced-motion`.
 
-La actualización posterior reemplazó la imagen superpuesta del hero por `img/hero-2026.jpg` como único fondo visual full width, conservando un overlay azul para la legibilidad del texto.
+La actualización posterior reemplazó el fondo del hero por `img/hero-2026-ok.jpg`, verificada en 1920 × 934 px. El hero respeta esa proporción en escritorio, libera el alto proporcional en tablet/móvil y usa un H1 de 86px con line-height de 96px en escritorio. Se conserva un overlay azul para la legibilidad del texto.
 
 La versión actual incorpora énfasis editorial SEO selectivo: azul institucional para frases de intención y `strong` para pocos conceptos de servicio, beneficio y conversión. Se evitó resaltar bloques completos o repetir el recurso en cada línea.
 

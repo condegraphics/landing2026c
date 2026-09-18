@@ -34,7 +34,7 @@
 
 ## Composición
 
-El hero utiliza exclusivamente `img/hero-2026.jpg` como fondo full width, con un overlay azul para asegurar el contraste del texto. Ya no contiene una imagen superpuesta independiente. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
+El hero utiliza exclusivamente `img/hero-2026-ok.jpg` como fondo full width, con dimensiones verificadas de **1920 × 934 px** y una relación aproximada de **2,056:1**. El CSS respeta esa proporción en escritorio y libera el aspect ratio en tablet y móvil. Se mantiene un overlay azul para asegurar el contraste del texto y no hay una imagen superpuesta independiente. El H1 de escritorio usa **86px / 96px**. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
 
 ## Movimiento
 
@@ -43,7 +43,8 @@ Se utiliza `animation-timeline: view()` para revelar bloques durante el desplaza
 ## Activos
 
 - `img/logo-conde-graphics-agencia-seo-argentina-260px.png`: logo oficial disponible.
-- `img/hero-2026.jpg`: fondo full width de la portada.
+- `img/hero-2026-ok.jpg`: fondo full width de la portada, 1920 × 934 px.
+- `img/hero-2026.jpg`: versión anterior del fondo, conservada como activo del repositorio.
 - `img/11062.jpg`: tecla AI, disponible como activo secundario.
 - `img/116836.jpg`: Google, beneficios SEO.
 - `img/54251.jpg`: círculo tecnológico, sección AI.
