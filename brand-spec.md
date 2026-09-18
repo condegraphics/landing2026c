@@ -58,6 +58,10 @@ El usuario confirmó que los JPG pueden utilizarse comercialmente con libertad.
 
 No se prometen posiciones, menciones, citas, ROI ni resultados garantizados. Se comunican condiciones de visibilidad, claridad, autoridad, experiencia, campañas, conversiones y medición responsable.
 
+## Énfasis SEO editorial
+
+La landing utiliza énfasis de forma selectiva, no decorativa. Las frases estratégicas de intención —como visibilidad, búsquedas, presencia orgánica, autoridad, conversión y oportunidad— pueden destacarse con azul institucional; los conceptos de servicio o beneficio más relevantes pueden usar `strong` en Merriweather Sans 800. El criterio es reforzar comprensión y escaneabilidad sin colorear cada palabra ni convertir el copy en una lista de keywords.
+
 ## Tracking
 
 GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.

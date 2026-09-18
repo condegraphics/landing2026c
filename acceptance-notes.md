@@ -18,6 +18,8 @@ La revisión visual confirmó la composición dividida del hero, el predominio d
 
 La actualización posterior reemplazó la imagen superpuesta del hero por `img/hero-2026.jpg` como único fondo visual full width, conservando un overlay azul para la legibilidad del texto.
 
+La versión actual incorpora énfasis editorial SEO selectivo: azul institucional para frases de intención y `strong` para pocos conceptos de servicio, beneficio y conversión. Se evitó resaltar bloques completos o repetir el recurso en cada línea.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.
