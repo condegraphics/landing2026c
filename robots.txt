@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://condegraphics.github.io/landing2026c/sitemap.xml
