@@ -12,7 +12,7 @@ OnePage HOME institucional para Conde Graphics, con eje en **SEO en la era de la
 
 ## Sistema visual
 
-La interfaz utiliza Raleway para titulares y Roboto para textos. La paleta se basa en azul día `#0073CB`, azul noche `#00215E`, negro, gris metal, gris luminoso, blanco y superficies azul pálido.
+La interfaz utiliza Merriweather Sans como familia única: peso 800 para títulos y peso 300 para los demás textos. La paleta se basa en azul día `#0073CB`, azul noche `#00215E`, negro, gris metal, gris luminoso, blanco y superficies azul pálido.
 
 ## Medición
 

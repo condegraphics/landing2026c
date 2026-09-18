@@ -27,8 +27,9 @@
 
 ## Tipografía
 
-- **Titulares:** Raleway, pesos 500–900.
-- **Textos:** Roboto, pesos 400–700.
+- **Familia única:** Merriweather Sans, cargada desde Google Fonts.
+- **Titulares:** Merriweather Sans, peso 800, aplicado a `h1`, `h2` y `h3`.
+- **Demás textos:** Merriweather Sans, peso 300, aplicado a cuerpo, navegación, botones, etiquetas, formularios y textos auxiliares.
 - **Escala:** `clamp()` para titulares, cuerpo base de 16px y lectura móvil prioritaria.
 
 ## Composición

@@ -20,6 +20,10 @@ Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.
 
+## Tipografía
+
+La versión actual utiliza Merriweather Sans como familia única. Los títulos `h1`, `h2` y `h3` usan peso 800; el resto de la interfaz usa peso 300.
+
 ## Medición
 
 No se cargan scripts activos de GA4, Google Ads, Google Tag Manager ni Meta, de acuerdo con la restricción del usuario de no agregar o activar cookies/consentimiento en esta primera versión.
