@@ -73,6 +73,8 @@ Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en
 
 En móvil, la escala tipográfica se reduce con un interlineado más compacto: H1 entre 37.6px y 55.2px, H2 entre 28.8px y 42.4px y H3 entre 20.7px y 23.2px, según el ancho disponible. Los dos CTA del hero se ocultan por completo en pantallas de hasta 680px; el acceso “HABLEMOS” del encabezado permanece disponible.
 
+La revisión UX/UI de la composición corrigió tres causas de desalineación: el encabezado de servicios ahora comparte una grilla de tres columnas con las tarjetas; los enlaces de las tarjetas se ubican después del contenido mediante flexbox, sin superponerse a listas; y los principios de SEO para IA usan un contenedor de texto propio para evitar párrafos comprimidos en la columna numérica. El collage Web conserva la proporción natural de sus imágenes y las grillas aplican `min-width: 0` para evitar condensación o desbordes.
+
 ## Tracking
 
 GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.

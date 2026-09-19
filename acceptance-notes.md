@@ -26,6 +26,8 @@ La actualización siguiente dejó todos los botones con `border-radius: 0`, igua
 
 La revisión móvil posterior redujo H1, H2 y H3, ajustó sus interlineados a valores más compactos y ocultó los dos CTA del hero hasta 680px de ancho. El botón “HABLEMOS” del encabezado no se oculta.
 
+La revisión UX/UI de escritorio y responsive corrigió la alineación del encabezado de servicios con la tercera tarjeta, evitó la superposición de enlaces sobre listas, abrió correctamente los textos de los principios AI y mantuvo las imágenes del collage Web en su proporción natural. También se añadieron protecciones de grilla para prevenir columnas comprimidas y overflow.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.
