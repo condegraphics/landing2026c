@@ -132,7 +132,7 @@
   .section-heading h2 { max-width: 22ch; }
   .heading-aside { color: var(--gray-metal); font-size: 1.05rem; line-height: 1.5; max-width: 32ch; padding: 0 clamp(1.5rem, 3vw, 2.7rem); }
   .services-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); }
-  .service-card { background: var(--blue-pale); border-top: 4px solid var(--gray-line); display: flex; flex-direction: column; min-height: 32rem; padding: clamp(1.5rem, 3vw, 2.7rem); position: relative; transition: background-color .3s ease, border-color .3s ease, transform .3s ease; }
+  .service-card { background: var(--blue-pale); border-top: 4px solid var(--gray-line); display: flex; flex-direction: column; min-height: 36rem; padding: clamp(1.5rem, 3vw, 2.7rem); position: relative; transition: background-color .3s ease, border-color .3s ease, transform .3s ease; }
   .service-card:hover { background: var(--blue-ice); border-color: var(--blue-day); transform: translateY(-6px); z-index: 1; }
   .service-card-featured { background: var(--blue-night); border-color: var(--blue-day); color: var(--white); }
   .service-card-featured:hover { background: var(--blue-night-2); }
@@ -148,7 +148,7 @@
   .service-list li { color: var(--gray-metal); font-size: .88rem; padding: .28rem 0 .28rem 1rem; position: relative; }
   .service-list li::before { background: var(--blue-day); content: ''; height: 4px; left: 0; position: absolute; top: .8rem; width: 4px; }
   .service-card-featured .service-list li { color: rgba(255,255,255,.78); }
-  .card-link { align-self: flex-start; font-size: .72rem; margin-top: auto; }
+  .card-link { align-self: stretch; font-size: .72rem; justify-content: center; margin-top: auto; text-align: center; }
   .service-card-featured .card-link { color: #8DCAEF; }
   .card-link span { font-size: 1.2rem; padding-left: .45rem; }
 
@@ -331,6 +331,7 @@
   .section-heading h2 { max-width: 13ch; }
   .heading-aside { max-width: 36ch; }
   .service-card-top { margin-bottom: 2.5rem; }
+  .card-link { align-self: stretch; }
   .benefits-media img { min-height: 16rem; object-fit: cover; }
   .image-label { bottom: .65rem; font-size: .54rem; left: .65rem; }
   .ai-section { padding-bottom: 6rem; }

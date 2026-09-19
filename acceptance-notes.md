@@ -30,6 +30,8 @@ La revisión UX/UI de escritorio y responsive corrigió la alineación del encab
 
 La revisión de CTA convirtió los enlaces accionables de introducción, servicios y Web en botones outline sin relleno. Se unificaron las variantes para fondos claros y oscuros, con borde recto, hover/focus de inversión de contraste y desplazamiento sutil de la flecha. Los CTA primarios rellenos permanecen diferenciados.
 
+En la grilla de servicios se extendió la altura de las tarjetas para separar el contenido de los botones, se anclaron los tres CTA a la misma línea inferior, se igualó su ancho, se centraron los textos y se eliminaron las flechas exclusivamente de estos tres botones.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.

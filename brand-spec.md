@@ -73,6 +73,8 @@ Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en
 
 Los CTA secundarios usan un sistema outline común y sin relleno. En fondos claros se dibujan con borde azul institucional y texto azul; en fondos oscuros usan borde claro y texto blanco o celeste. Ambos tienen el mismo tratamiento de hover/focus: se invierte el contraste con un relleno de la paleta y la flecha se desplaza sutilmente. Los CTA primarios de WhatsApp y envío conservan relleno porque representan la acción principal.
 
+En la grilla de servicios, las tres tarjetas mantienen una altura homogénea en escritorio y los CTA se anclan al borde inferior con el mismo ancho, sin flechas y con texto centrado. En tablet y móvil la altura se vuelve automática para priorizar el flujo natural del contenido.
+
 En móvil, la escala tipográfica se reduce con un interlineado más compacto: H1 entre 37.6px y 55.2px, H2 entre 28.8px y 42.4px y H3 entre 20.7px y 23.2px, según el ancho disponible. Los dos CTA del hero se ocultan por completo en pantallas de hasta 680px; el acceso “HABLEMOS” del encabezado permanece disponible.
 
 La revisión UX/UI de la composición corrigió tres causas de desalineación: el encabezado de servicios ahora comparte una grilla de tres columnas con las tarjetas; los enlaces de las tarjetas se ubican después del contenido mediante flexbox, sin superponerse a listas; y los principios de SEO para IA usan un contenedor de texto propio para evitar párrafos comprimidos en la columna numérica. El collage Web conserva la proporción natural de sus imágenes y las grillas aplican `min-width: 0` para evitar condensación o desbordes.
