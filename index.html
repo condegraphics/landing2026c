@@ -238,7 +238,7 @@
         <div class="contact-stack reveal reveal-delay">
           <div class="contact-panel">
             <div class="contact-panel-heading"><span>ENVIAR CONSULTA</span><span class="contact-dot"></span></div>
-            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
               <input type="hidden" name="access_key" value="2192650d-d7a9-443c-a067-b5ee134ee366">
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               <div class="form-fields-grid">
@@ -249,7 +249,8 @@
                 <div class="form-field form-field-full"><label for="budget">¿Cuál es tu presupuesto actual de marketing?</label><select id="budget" name="budget" required><option value="" selected disabled>Selecciona</option><option>Menos de 600 USD</option><option>Entre 600 y 1.200 USD</option><option>Entre 1.200 y 2.000 USD</option><option>Entre 2.000 y 5.000 USD</option><option>Más de 5.000 USD</option></select></div>
                 <div class="form-field form-field-full"><label for="message">Contame brevemente tu proyecto</label><textarea id="message" name="message" rows="4" required></textarea></div>
               </div>
-              <button class="button button-light" type="submit">ENVIAR CONSULTA</button>
+              <button class="button button-light" id="contact-submit" type="submit">ENVIAR CONSULTA</button>
+              <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
               <p class="form-note">Tus datos se enviarán de forma segura para analizar tu proyecto.</p>
             </form>
           </div>
@@ -271,6 +272,7 @@
     <div class="container footer-bottom"><span>© 2026 Conde Graphics. Todos los derechos reservados.</span><span>Buenos Aires · Argentina · LATAM</span></div>
   </footer>
 
-  <!-- Medición pendiente de activación: GA4 / Google Ads / GTM / Meta. No se cargan scripts activos en esta versión. -->
+  <!-- Medición pendiente de activación: GA4 / Google Ads / GTM / Meta. No se cargan scripts de medición en esta versión. -->
+  <script src="form.js" defer></script>
 </body>
 </html>

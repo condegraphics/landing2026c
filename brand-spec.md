@@ -92,3 +92,5 @@ En desktop, el bloque de contacto se distribuye en dos columnas 50/50: propuesta
 El envío demo utiliza `https://api.web3forms.com/submit`, asunto `Nueva consulta comercial — Conde Graphics`, remitente `Conde Graphics` y redirección a `gracias.html`. La página de confirmación comunica recepción de la consulta y respuesta estimada en 24 a 48 horas con tono B2B.
 
 La Página web es opcional y se captura como texto con teclado de URL: acepta tanto dominios abreviados como URLs completas sin obligar a la persona a recordar `https://` ni bloquear el envío por un formato incompleto.
+
+La confirmación principal se resuelve inline dentro del panel del formulario, con estado de envío, éxito o error, `aria-live` y foco accesible. No se usa popup de navegador ni modal bloqueante. `gracias.html` queda como fallback para casos sin JavaScript y se presenta como tarjeta compacta, no como una pantalla de impacto full width.

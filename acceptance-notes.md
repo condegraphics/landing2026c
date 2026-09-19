@@ -42,6 +42,8 @@ La revisión desktop posterior corrigió la proporción del bloque principal a 5
 
 La etapa demo reemplazó el comportamiento `mailto:` por Web3Forms. El formulario publica sus campos mediante POST al endpoint oficial del servicio, mantiene validación HTML, incluye protección honeypot y redirige a una página corporativa propia de confirmación. El receptor configurado es `clubconde@gmail.com`; la solución es temporal para pruebas y deberá reemplazarse por una recepción propia al pasar al dominio final.
 
+La experiencia posterior al envío fue revisada según buenas prácticas de feedback accesible: la ruta normal mantiene al usuario en la Home y muestra un mensaje inline con `aria-live`, estado de envío, éxito o error y foco accesible. No se usa popup de navegador ni modal bloqueante. La redirección a `gracias.html` permanece como fallback si JavaScript no está disponible, ahora con una tarjeta visual compacta y menos invasiva.
+
 El campo opcional Página web dejó de exigir el formato estricto de `type="url"`. Ahora acepta `ejemplo.com`, `www.ejemplo.com`, `http://ejemplo.com` y `https://ejemplo.com`, sin modificar el valor ingresado por la persona ni bloquear consultas por un formato de URL incompleto.
 
 ## Tipografía

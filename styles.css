@@ -387,3 +387,26 @@
   .thank-you-actions { flex-direction: column; }
   .thank-you-actions .button { width: 100%; }
 }
+
+
+/* Inline form feedback */
+.form-status { border-left: 3px solid var(--blue-day); display: grid; gap: .35rem; font-size: .78rem; line-height: 1.45; margin-top: .65rem; padding: .85rem 1rem; }
+.form-status[hidden] { display: none; }
+.form-status strong { color: var(--blue-night); font-family: var(--font-display); font-size: .78rem; font-weight: 800; letter-spacing: .02em; }
+.form-status span { color: var(--gray-metal); }
+.form-status.is-pending { background: var(--blue-pale); border-color: var(--gray-metal); }
+.form-status.is-success { background: #EAF7F0; border-color: #27824A; }
+.form-status.is-success strong { color: #176534; }
+.form-status.is-error { background: #FFF2F0; border-color: #B42318; }
+.form-status.is-error strong { color: #8A1C13; }
+.form-status a { color: var(--blue-day); font-weight: 800; }
+.contact-form .button:disabled { cursor: wait; opacity: .65; }
+.thank-you-card { background: rgba(255,255,255,.06); border: 1px solid rgba(141,202,239,.22); max-width: 46rem; padding: clamp(2rem, 5vw, 4rem); }
+.thank-you-card h1 { font-size: clamp(2.7rem, 5.5vw, 5rem); line-height: 1.04; max-width: 12ch; }
+.thank-you-card .thank-you-lead { max-width: 42ch; }
+.thank-you-brand { margin-bottom: 3rem; }
+@media (max-width: 680px) {
+  .thank-you-card { padding: 1.5rem; }
+  .thank-you-card h1 { font-size: clamp(2.35rem, 10vw, 3.5rem); }
+  .thank-you-brand { margin-bottom: 2.5rem; }
+}
