@@ -34,7 +34,7 @@
 
 ## Composición
 
-El hero utiliza exclusivamente `img/hero-2026-ok.jpg` como fondo full width, con dimensiones verificadas de **1920 × 934 px** y una relación aproximada de **2,056:1**. El CSS respeta esa proporción en escritorio y libera el aspect ratio en tablet y móvil. Se mantiene un overlay azul para asegurar el contraste del texto y no hay una imagen superpuesta independiente. El H1 de escritorio usa **86px / 96px**. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
+El hero utiliza exclusivamente `img/hero-2026-visual.jpg` como fondo full width, con dimensiones verificadas de **1920 × 934 px** y una relación aproximada de **2,056:1**. El CSS respeta esa proporción en escritorio y libera el aspect ratio en tablet y móvil. Se mantiene un overlay azul para asegurar el contraste del texto y no hay una imagen superpuesta independiente. El H1 de escritorio usa **86px / 96px**. La sección de servicios trabaja tres columnas en escritorio y una columna en móvil. La sección AI usa `img/54251.jpg` como fondo full width con overlay azul. Se evitan tres o más zigzags consecutivos y no se convierten todos los textos en tarjetas.
 
 ## Movimiento
 
@@ -43,10 +43,10 @@ Se utiliza `animation-timeline: view()` para revelar bloques durante el desplaza
 ## Activos
 
 - `img/logo-conde-graphics-agencia-seo-argentina-260px.png`: logo oficial disponible.
-- `img/hero-2026-ok.jpg`: fondo full width de la portada, 1920 × 934 px.
+- `img/hero-2026-visual.jpg`: fondo full width de la portada, 1920 × 934 px.
 - `img/hero-2026.jpg`: versión anterior del fondo, conservada como activo del repositorio.
 - `img/11062.jpg`: tecla AI, disponible como activo secundario.
-- `img/116836.jpg`: Google, beneficios SEO.
+- `img/internet.jpg`: persona, código y tecnología digital, beneficios SEO.
 - `img/54251.jpg`: círculo tecnológico, sección AI.
 - `img/50332.jpg`: reunión y datos, método.
 - `img/15341.jpg`: trabajo Web.
@@ -69,7 +69,7 @@ Se amplió el espaciado entre eyebrow, títulos, párrafos, listas y CTA. Las se
 
 ## Botones y hero
 
-Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en el hero, comparten el mismo ancho mediante una distribución flexible; en móvil pasan a ocupar el mismo ancho disponible en columna. El overlay azul del hero se mantiene al 50% de opacidad para preservar más detalle de `hero-2026-ok.jpg`.
+Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en el hero, comparten el mismo ancho mediante una distribución flexible; en móvil pasan a ocupar el mismo ancho disponible en columna. El overlay azul del hero se mantiene al 50% de opacidad para preservar más detalle de `hero-2026-visual.jpg`.
 
 Los CTA secundarios usan un sistema outline común y sin relleno. En fondos claros se dibujan con borde azul institucional y texto azul; en fondos oscuros usan borde claro y texto blanco o celeste. Ambos tienen el mismo tratamiento de hover/focus: se invierte el contraste con un relleno de la paleta y la flecha se desplaza sutilmente. Los CTA primarios de WhatsApp y envío conservan relleno porque representan la acción principal.
 
