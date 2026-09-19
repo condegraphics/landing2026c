@@ -109,7 +109,7 @@
   .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
   .hero-actions .button { flex: 1 1 0; min-width: 13rem; }
   .hero-note { border-left: 1px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
-  .scroll-cue { align-items: center; bottom: 2.25rem; color: rgba(255,255,255,.68); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; gap: .65rem; left: max(var(--gutter), calc((100vw - var(--max-width)) / 2)); letter-spacing: .2em; position: absolute; z-index: 2; }
+  .scroll-cue { align-items: center; bottom: 2.25rem; color: rgba(255,255,255,.68); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; gap: .65rem; left: 50%; letter-spacing: .2em; position: absolute; transform: translateX(-50%); z-index: 2; }
   .scroll-cue span { border: 1px solid var(--blue-day); border-radius: 50%; height: 1.5rem; position: relative; width: 1.5rem; }
   .scroll-cue span::after { border-bottom: 1px solid var(--blue-day); border-right: 1px solid var(--blue-day); content: ''; height: .35rem; left: .52rem; position: absolute; top: .42rem; transform: rotate(45deg); width: .35rem; }
 
@@ -333,12 +333,12 @@
   .brand { width: 7.2rem; }
   .desktop-nav { display: none; }
   .header-cta { font-size: .64rem; }
-  .hero { padding-top: 8.2rem; }
-  .hero { aspect-ratio: auto; }
+  .hero { aspect-ratio: auto; min-height: 100vh; min-height: 100svh; min-height: 100dvh; padding-top: 8.2rem; }
   .hero-grid { min-height: auto; }
   .hero-copy h1 { font-size: clamp(2.35rem, 9.5vw, 3.45rem); line-height: 1.01; margin-bottom: 1.25rem; max-width: 11ch; }
   .hero-lead { font-size: 1.13rem; }
   .hero-actions { display: none; }
+  .hero-note { display: none; }
   .scroll-cue { bottom: 1.4rem; }
   .intro-grid { grid-template-columns: 1fr; }
   .section-marker { padding-top: 0; }
