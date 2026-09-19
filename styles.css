@@ -104,7 +104,7 @@
   .hero-copy { align-self: center; }
   .hero-copy .eyebrow { margin-bottom: 1.5rem; }
   .hero-copy { max-width: 45rem; }
-  .hero-copy h1 { font-size: 86px; line-height: 96px; margin-bottom: 1.8rem; max-width: 11ch; }
+  .hero-copy h1 { font-size: 70px; line-height: 78px; margin-bottom: 1.8rem; max-width: 11ch; }
   .hero-lead { color: rgba(255,255,255,.88); font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 29ch; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
   .hero-actions .button { flex: 1 1 0; min-width: 13rem; }
