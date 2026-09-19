@@ -42,6 +42,8 @@ La revisión desktop posterior corrigió la proporción del bloque principal a 5
 
 La etapa demo reemplazó el comportamiento `mailto:` por Web3Forms. El formulario publica sus campos mediante POST al endpoint oficial del servicio, mantiene validación HTML, incluye protección honeypot y redirige a una página corporativa propia de confirmación. El receptor configurado es `clubconde@gmail.com`; la solución es temporal para pruebas y deberá reemplazarse por una recepción propia al pasar al dominio final.
 
+El campo opcional Página web dejó de exigir el formato estricto de `type="url"`. Ahora acepta `ejemplo.com`, `www.ejemplo.com`, `http://ejemplo.com` y `https://ejemplo.com`, sin modificar el valor ingresado por la persona ni bloquear consultas por un formato de URL incompleto.
+
 ## Tipografía
 
 La versión actual utiliza Merriweather Sans como familia única. Los títulos `h1`, `h2` y `h3` usan peso 800; el resto de la interfaz usa peso 300.
