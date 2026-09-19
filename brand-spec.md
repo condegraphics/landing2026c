@@ -67,6 +67,10 @@ La landing utiliza énfasis de forma selectiva, no decorativa. Las frases estrat
 
 Se amplió el espaciado entre eyebrow, títulos, párrafos, listas y CTA. Las secciones principales utilizan paddings verticales más generosos y las grillas tienen gaps mayores en escritorio. En móvil se conservan valores más compactos para evitar desplazamientos innecesarios, sin volver a amontonar los elementos.
 
+## Botones y hero
+
+Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en el hero, comparten el mismo ancho mediante una distribución flexible; en móvil pasan a ocupar el mismo ancho disponible en columna. El overlay azul del hero se mantiene al 50% de opacidad para preservar más detalle de `hero-2026-ok.jpg`.
+
 ## Tracking
 
 GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.

@@ -78,7 +78,7 @@
   .desktop-nav a { color: rgba(255,255,255,.84); font-family: var(--font-display); font-size: .78rem; font-weight: 300; letter-spacing: .09em; text-transform: uppercase; transition: color .25s ease; }
   .desktop-nav a:hover { color: var(--white); }
 
-  .button { align-items: center; border: 1px solid transparent; border-radius: var(--radius-sm); cursor: pointer; display: inline-flex; font-family: var(--font-display); font-size: .75rem; font-weight: 300; justify-content: center; letter-spacing: .12em; min-height: 3.25rem; padding: .85rem 1.35rem; text-align: center; transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
+  .button { align-items: center; border: 1px solid transparent; border-radius: 0; cursor: pointer; display: inline-flex; font-family: var(--font-display); font-size: .75rem; font-weight: 300; justify-content: center; letter-spacing: .12em; min-height: 3.25rem; padding: .85rem 1.35rem; text-align: center; transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
   .button:hover { transform: translateY(-2px); }
   .button-primary { background: var(--blue-day); box-shadow: 0 12px 26px rgba(0,115,203,.25); color: var(--white); }
   .button-primary:hover { background: #0066B4; box-shadow: 0 16px 30px rgba(0,115,203,.35); }
@@ -92,7 +92,7 @@
   .hero { aspect-ratio: 1920 / 934; min-height: 0; overflow: hidden; padding: 7.6rem 0 4.5rem; }
   .hero-media, .hero-overlay, .ai-media, .ai-overlay { inset: 0; position: absolute; }
   .hero-media { background-image: url('img/hero-2026-ok.jpg'); background-position: center; background-size: cover; opacity: .82; }
-  .hero-overlay { background: linear-gradient(90deg, rgba(0,33,94,.88) 0%, rgba(0,33,94,.63) 52%, rgba(0,33,94,.26) 100%); }
+  .hero-overlay { background: linear-gradient(90deg, rgba(0,33,94,.88) 0%, rgba(0,33,94,.63) 52%, rgba(0,33,94,.26) 100%); opacity: .5; }
   .hero-grid { align-items: center; display: grid; min-height: 570px; position: relative; z-index: 1; }
   .hero-copy { align-self: center; }
   .hero-copy .eyebrow { margin-bottom: 1.5rem; }
@@ -100,6 +100,7 @@
   .hero-copy h1 { font-size: 86px; line-height: 96px; margin-bottom: 1.8rem; max-width: 11ch; }
   .hero-lead { color: rgba(255,255,255,.88); font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 29ch; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
+  .hero-actions .button { flex: 1 1 0; min-width: 13rem; }
   .hero-note { border-left: 1px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
   .scroll-cue { align-items: center; bottom: 2.25rem; color: rgba(255,255,255,.68); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; gap: .65rem; left: max(var(--gutter), calc((100vw - var(--max-width)) / 2)); letter-spacing: .2em; position: absolute; z-index: 2; }
   .scroll-cue span { border: 1px solid var(--blue-day); border-radius: 50%; height: 1.5rem; position: relative; width: 1.5rem; }
@@ -114,7 +115,7 @@
   .intro-content .lead-copy { max-width: 62ch; }
   .intro-content p + p { color: var(--gray-metal); margin-top: 1.7rem; max-width: 56ch; }
   .text-link { align-items: center; color: var(--blue-day); display: inline-flex; font-family: var(--font-display); font-size: .82rem; font-weight: 300; gap: .7rem; letter-spacing: .07em; margin-top: 3rem; text-transform: uppercase; }
-  .button-link-outline { background: transparent; border: 1px solid var(--blue-day); min-height: 3.35rem; padding: .85rem 1.25rem; }
+  .button-link-outline { background: transparent; border: 1px solid var(--blue-day); border-radius: 0; min-height: 3.35rem; padding: .85rem 1.25rem; }
   .button-link-outline:hover { background: var(--blue-day); color: var(--white); }
   .text-link span { font-size: 1.35rem; font-weight: 300; transition: transform .25s ease; }
   .text-link:hover span { transform: translateX(4px); }
