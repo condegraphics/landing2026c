@@ -365,3 +365,25 @@
   .footer-links { justify-content: start; }
   .footer-bottom { flex-direction: column; gap: .4rem; }
 }
+
+
+/* Thank-you confirmation */
+.thank-you-body { background: var(--blue-night); }
+.thank-you-page { min-height: 100svh; overflow: hidden; position: relative; }
+.thank-you-shape { border: 1px solid rgba(141,202,239,.16); border-radius: 50%; height: 42rem; position: absolute; right: -12rem; top: -14rem; width: 42rem; }
+.thank-you-shape::after { border: 1px solid rgba(141,202,239,.12); border-radius: 50%; content: ''; inset: 4rem; position: absolute; }
+.thank-you-content { display: flex; flex-direction: column; justify-content: center; min-height: 100svh; padding-bottom: 5rem; padding-top: 5rem; position: relative; z-index: 1; }
+.thank-you-brand { filter: brightness(0) invert(1); margin-bottom: clamp(5rem, 12vw, 10rem); width: 10rem; }
+.thank-you-content h1 { color: var(--white); max-width: 11ch; }
+.thank-you-lead { color: rgba(255,255,255,.8); font-size: clamp(1.1rem, 1.8vw, 1.45rem); line-height: 1.55; margin-top: 2rem; max-width: 38ch; }
+.thank-you-meta { color: rgba(255,255,255,.64); margin-top: 1.25rem; max-width: 42ch; }
+.thank-you-meta strong { color: #8DCAEF; font-weight: 800; }
+.thank-you-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
+.thank-you-actions .button { min-width: 14rem; }
+@media (max-width: 680px) {
+  .thank-you-content { padding-bottom: 3rem; padding-top: 3rem; }
+  .thank-you-brand { margin-bottom: 5rem; width: 8rem; }
+  .thank-you-content h1 { font-size: clamp(2.4rem, 10vw, 3.5rem); line-height: 1.04; }
+  .thank-you-actions { flex-direction: column; }
+  .thank-you-actions .button { width: 100%; }
+}

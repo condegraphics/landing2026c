@@ -40,6 +40,8 @@ El formulario fue reorganizado para reducir su extensión visual. “Nombre” p
 
 La revisión desktop posterior corrigió la proporción del bloque principal a 50/50 y redujo la escala de los valores de email, teléfono y ubicación en la tarjeta inferior. También se añadió quiebre de línea seguro para impedir que esos textos se pisen o se interpongan entre columnas.
 
+La etapa demo reemplazó el comportamiento `mailto:` por Web3Forms. El formulario publica sus campos mediante POST al endpoint oficial del servicio, mantiene validación HTML, incluye protección honeypot y redirige a una página corporativa propia de confirmación. El receptor configurado es `clubconde@gmail.com`; la solución es temporal para pruebas y deberá reemplazarse por una recepción propia al pasar al dominio final.
+
 ## Tipografía
 
 La versión actual utiliza Merriweather Sans como familia única. Los títulos `h1`, `h2` y `h3` usan peso 800; el resto de la interfaz usa peso 300.

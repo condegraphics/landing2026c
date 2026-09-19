@@ -81,10 +81,12 @@ La revisión UX/UI de la composición corrigió tres causas de desalineación: e
 
 ## Tracking
 
-GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.
+GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento. Para la etapa demo, el formulario usa Web3Forms como receptor temporal de consultas y envía las notificaciones a `clubconde@gmail.com`. La Access Key es una clave pública requerida por el endpoint del servicio y no se trata como contraseña privada. La configuración deberá revisarse y reemplazarse por una solución propia al migrar al dominio final.
 
 ## Formulario y contacto
 
 El formulario de contacto prioriza una captura breve y ordenada: Nombre y Apellido, Email, Teléfono obligatorio, Página web opcional, presupuesto actual de marketing mediante selector y descripción del proyecto. Los datos alternativos —email, llamada y ubicación— se presentan fuera del formulario en un bloque independiente para evitar que el panel de carga resulte extenso o visualmente pesado. La distribución usa dos columnas en escritorio y una columna en móvil.
 
 En desktop, el bloque de contacto se distribuye en dos columnas 50/50: propuesta y texto a la izquierda, formulario a la derecha. Los valores del bloque de contacto alternativo usan una escala menor, `overflow-wrap` y un interlineado controlado para evitar choques entre email, teléfono y ubicación.
+
+El envío demo utiliza `https://api.web3forms.com/submit`, asunto `Nueva consulta comercial — Conde Graphics`, remitente `Conde Graphics` y redirección a `gracias.html`. La página de confirmación comunica recepción de la consulta y respuesta estimada en 24 a 48 horas con tono B2B.

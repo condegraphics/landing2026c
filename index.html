@@ -238,17 +238,19 @@
         <div class="contact-stack reveal reveal-delay">
           <div class="contact-panel">
             <div class="contact-panel-heading"><span>ENVIAR CONSULTA</span><span class="contact-dot"></span></div>
-            <form class="contact-form" action="mailto:info@condegraphics.com" method="post" enctype="text/plain">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="2192650d-d7a9-443c-a067-b5ee134ee366">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
               <div class="form-fields-grid">
-                <div class="form-field"><label for="name">Nombre y Apellido</label><input id="name" name="Nombre y Apellido" type="text" autocomplete="name" required></div>
-                <div class="form-field"><label for="email">Email</label><input id="email" name="Email" type="email" autocomplete="email" required></div>
-                <div class="form-field"><label for="phone">Teléfono</label><input id="phone" name="Teléfono" type="tel" autocomplete="tel" inputmode="tel" required></div>
-                <div class="form-field"><label for="website">Página web <span>(opcional)</span></label><input id="website" name="Página web" type="url" autocomplete="url" inputmode="url"></div>
-                <div class="form-field form-field-full"><label for="budget">¿Cuál es tu presupuesto actual de marketing?</label><select id="budget" name="Presupuesto de marketing" required><option value="" selected disabled>Selecciona</option><option>Menos de 600 USD</option><option>Entre 600 y 1.200 USD</option><option>Entre 1.200 y 2.000 USD</option><option>Entre 2.000 y 5.000 USD</option><option>Más de 5.000 USD</option></select></div>
-                <div class="form-field form-field-full"><label for="message">Contame brevemente tu proyecto</label><textarea id="message" name="Mensaje" rows="4" required></textarea></div>
+                <div class="form-field"><label for="name">Nombre y Apellido</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+                <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+                <div class="form-field"><label for="phone">Teléfono</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
+                <div class="form-field"><label for="website">Página web <span>(opcional)</span></label><input id="website" name="website" type="url" autocomplete="url" inputmode="url"></div>
+                <div class="form-field form-field-full"><label for="budget">¿Cuál es tu presupuesto actual de marketing?</label><select id="budget" name="budget" required><option value="" selected disabled>Selecciona</option><option>Menos de 600 USD</option><option>Entre 600 y 1.200 USD</option><option>Entre 1.200 y 2.000 USD</option><option>Entre 2.000 y 5.000 USD</option><option>Más de 5.000 USD</option></select></div>
+                <div class="form-field form-field-full"><label for="message">Contame brevemente tu proyecto</label><textarea id="message" name="message" rows="4" required></textarea></div>
               </div>
               <button class="button button-light" type="submit">ENVIAR CONSULTA</button>
-              <p class="form-note">Se abrirá tu cliente de correo para completar el envío.</p>
+              <p class="form-note">Tus datos se enviarán de forma segura para analizar tu proyecto.</p>
             </form>
           </div>
           <aside class="contact-details" aria-label="Otras formas de contacto">
