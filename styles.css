@@ -323,7 +323,8 @@
 }
 
 @media (max-width: 680px) {
-  :root { --gutter: 1.1rem; }
+  /* Mobile: approximately 5% of additional breathing room per side. */
+  :root { --gutter: clamp(1.8rem, 10vw, 2.5rem); }
   h1 { font-size: clamp(2.35rem, 9.5vw, 3.45rem); line-height: 1.01; }
   h2 { font-size: clamp(1.8rem, 7.2vw, 2.65rem); line-height: 1.04; }
   h3 { font-size: clamp(1.15rem, 5.2vw, 1.45rem); line-height: 1.12; }

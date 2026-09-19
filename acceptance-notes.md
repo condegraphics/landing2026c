@@ -44,6 +44,8 @@ La etapa demo reemplazó el comportamiento `mailto:` por Web3Forms. El formulari
 
 La experiencia posterior al envío fue revisada según buenas prácticas de feedback accesible: la ruta normal mantiene al usuario en la Home y muestra un mensaje inline con `aria-live`, estado de envío, éxito o error y foco accesible. No se usa popup de navegador ni modal bloqueante. La redirección a `gracias.html` permanece como fallback si JavaScript no está disponible, ahora con una tarjeta visual compacta y menos invasiva.
 
+La revisión móvil amplió el aire lateral mediante un gutter fluido de aproximadamente 5 % adicional por lado. Se preservan la navegación, los campos del formulario, los CTA y la estructura de secciones; el cambio queda limitado al espaciado horizontal del contenedor en viewport de hasta 680 px.
+
 El campo opcional Página web dejó de exigir el formato estricto de `type="url"`. Ahora acepta `ejemplo.com`, `www.ejemplo.com`, `http://ejemplo.com` y `https://ejemplo.com`, sin modificar el valor ingresado por la persona ni bloquear consultas por un formato de URL incompleto.
 
 ## Tipografía

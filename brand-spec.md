@@ -94,3 +94,7 @@ El envío demo utiliza `https://api.web3forms.com/submit`, asunto `Nueva consult
 La Página web es opcional y se captura como texto con teclado de URL: acepta tanto dominios abreviados como URLs completas sin obligar a la persona a recordar `https://` ni bloquear el envío por un formato incompleto.
 
 La confirmación principal se resuelve inline dentro del panel del formulario, con estado de envío, éxito o error, `aria-live` y foco accesible. No se usa popup de navegador ni modal bloqueante. `gracias.html` queda como fallback para casos sin JavaScript y se presenta como tarjeta compacta, no como una pantalla de impacto full width.
+
+### Espaciado lateral móvil
+
+En viewport móvil, el contenedor utiliza un gutter fluido de `clamp(1.8rem, 10vw, 2.5rem)`, equivalente a aproximadamente un 5 % adicional de aire por lado respecto de la versión anterior. Las secciones mantienen sus fondos a ancho completo, mientras que textos, tarjetas, formularios y controles conservan una lectura más despejada dentro del contenedor.
