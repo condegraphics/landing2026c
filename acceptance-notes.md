@@ -38,6 +38,8 @@ Los destinos principales están preparados para WhatsApp, email, llamada y ancla
 
 El formulario fue reorganizado para reducir su extensión visual. “Nombre” pasó a “Nombre y Apellido”; se agregó Teléfono como campo obligatorio, Página web como campo opcional y un selector obligatorio para el presupuesto actual de marketing con las cinco opciones solicitadas. Email y descripción del proyecto se conservaron. “Otras formas de contacto”, email, llamada y ubicación quedaron fuera del formulario en una tarjeta independiente responsive.
 
+La revisión desktop posterior corrigió la proporción del bloque principal a 50/50 y redujo la escala de los valores de email, teléfono y ubicación en la tarjeta inferior. También se añadió quiebre de línea seguro para impedir que esos textos se pisen o se interpongan entre columnas.
+
 ## Tipografía
 
 La versión actual utiliza Merriweather Sans como familia única. Los títulos `h1`, `h2` y `h3` usan peso 800; el resto de la interfaz usa peso 300.

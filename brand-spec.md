@@ -86,3 +86,5 @@ GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración
 ## Formulario y contacto
 
 El formulario de contacto prioriza una captura breve y ordenada: Nombre y Apellido, Email, Teléfono obligatorio, Página web opcional, presupuesto actual de marketing mediante selector y descripción del proyecto. Los datos alternativos —email, llamada y ubicación— se presentan fuera del formulario en un bloque independiente para evitar que el panel de carga resulte extenso o visualmente pesado. La distribución usa dos columnas en escritorio y una columna en móvil.
+
+En desktop, el bloque de contacto se distribuye en dos columnas 50/50: propuesta y texto a la izquierda, formulario a la derecha. Los valores del bloque de contacto alternativo usan una escala menor, `overflow-wrap` y un interlineado controlado para evitar choques entre email, teléfono y ubicación.

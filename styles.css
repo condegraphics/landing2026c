@@ -234,7 +234,7 @@
   .contact { overflow: hidden; padding: clamp(7rem, 12vw, 11rem) 0; }
   .contact-shape { border: 1px solid rgba(141,202,239,.16); border-radius: 50%; height: 38rem; position: absolute; right: -11rem; top: -10rem; width: 38rem; }
   .contact-shape::after { border: 1px solid rgba(141,202,239,.12); border-radius: 50%; content: ''; inset: 4rem; position: absolute; }
-  .contact-grid { display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, 1fr) minmax(20rem, .85fr); position: relative; z-index: 1; }
+  .contact-grid { display: grid; gap: clamp(3rem, 6vw, 6rem); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); position: relative; z-index: 1; }
   .contact-copy .eyebrow { margin-bottom: 1.75rem; }
   .contact-copy h2 { margin-bottom: 2.6rem; max-width: 12ch; }
   .contact-copy .lead-copy { color: rgba(255,255,255,.78); }
@@ -251,7 +251,7 @@
   .contact-line strong { color: var(--blue-night); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
   .contact-details .contact-line { border-color: rgba(255,255,255,.2); }
   .contact-details .contact-line span { color: #8DCAEF; }
-  .contact-details .contact-line strong { color: var(--white); }
+  .contact-details .contact-line strong { color: var(--white); font-size: .82rem; line-height: 1.35; overflow-wrap: anywhere; }
   .contact-form { display: grid; gap: .8rem; margin-top: .5rem; }
   .form-fields-grid { display: grid; gap: .85rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .form-field { display: grid; gap: .38rem; min-width: 0; }
