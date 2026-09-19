@@ -110,7 +110,7 @@
   .hero-lead { color: rgba(255,255,255,.88); font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 29ch; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
   .hero-actions .button { flex: 1 1 0; min-width: 13rem; }
-  .hero-note { border-left: 1px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
+  .hero-note { border-left: 2px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
   .scroll-cue { align-items: center; bottom: 2.25rem; color: rgba(255,255,255,.68); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; gap: .65rem; left: 50%; letter-spacing: .2em; position: absolute; transform: translateX(-50%); z-index: 2; }
   .scroll-cue span { border: 1px solid var(--blue-day); border-radius: 50%; height: 1.5rem; position: relative; width: 1.5rem; }
   .scroll-cue span::after { border-bottom: 1px solid var(--blue-day); border-right: 1px solid var(--blue-day); content: ''; height: .35rem; left: .52rem; position: absolute; top: .42rem; transform: rotate(45deg); width: .35rem; }
