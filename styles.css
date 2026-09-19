@@ -302,8 +302,9 @@
 
 @media (max-width: 680px) {
   :root { --gutter: 1.1rem; }
-  h1 { font-size: clamp(2.9rem, 14vw, 4.5rem); }
-  h2 { font-size: clamp(2.15rem, 11vw, 3.5rem); }
+  h1 { font-size: clamp(2.35rem, 9.5vw, 3.45rem); line-height: 1.01; }
+  h2 { font-size: clamp(1.8rem, 7.2vw, 2.65rem); line-height: 1.04; }
+  h3 { font-size: clamp(1.15rem, 5.2vw, 1.45rem); line-height: 1.12; }
   .site-header { position: absolute; }
   .header-inner { min-height: 5.5rem; }
   .brand { width: 7.2rem; }
@@ -312,10 +313,9 @@
   .hero { padding-top: 8.2rem; }
   .hero { aspect-ratio: auto; }
   .hero-grid { min-height: auto; }
-  .hero-copy h1 { font-size: clamp(3rem, 13vw, 5.2rem); line-height: 1.08; margin-bottom: 1.25rem; max-width: 11ch; }
+  .hero-copy h1 { font-size: clamp(2.35rem, 9.5vw, 3.45rem); line-height: 1.01; margin-bottom: 1.25rem; max-width: 11ch; }
   .hero-lead { font-size: 1.13rem; }
-  .hero-actions { align-items: stretch; flex-direction: column; max-width: 20rem; }
-  .hero-actions .button { width: 100%; }
+  .hero-actions { display: none; }
   .scroll-cue { bottom: 1.4rem; }
   .intro-grid { grid-template-columns: 1fr; }
   .section-marker { padding-top: 0; }

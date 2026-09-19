@@ -24,6 +24,8 @@ La revisión visual posterior redujo todos los H2 de escritorio a 56px con line-
 
 La actualización siguiente dejó todos los botones con `border-radius: 0`, igualó el ancho de los dos CTA del hero y redujo la opacidad del overlay azul del hero al 50% para recuperar presencia de la imagen de fondo.
 
+La revisión móvil posterior redujo H1, H2 y H3, ajustó sus interlineados a valores más compactos y ocultó los dos CTA del hero hasta 680px de ancho. El botón “HABLEMOS” del encabezado no se oculta.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.

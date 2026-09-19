@@ -71,6 +71,8 @@ Se amplió el espaciado entre eyebrow, títulos, párrafos, listas y CTA. Las se
 
 Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en el hero, comparten el mismo ancho mediante una distribución flexible; en móvil pasan a ocupar el mismo ancho disponible en columna. El overlay azul del hero se mantiene al 50% de opacidad para preservar más detalle de `hero-2026-ok.jpg`.
 
+En móvil, la escala tipográfica se reduce con un interlineado más compacto: H1 entre 37.6px y 55.2px, H2 entre 28.8px y 42.4px y H3 entre 20.7px y 23.2px, según el ancho disponible. Los dos CTA del hero se ocultan por completo en pantallas de hasta 680px; el acceso “HABLEMOS” del encabezado permanece disponible.
+
 ## Tracking
 
 GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.
