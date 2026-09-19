@@ -28,6 +28,8 @@ La revisión móvil posterior redujo H1, H2 y H3, ajustó sus interlineados a va
 
 La revisión UX/UI de escritorio y responsive corrigió la alineación del encabezado de servicios con la tercera tarjeta, evitó la superposición de enlaces sobre listas, abrió correctamente los textos de los principios AI y mantuvo las imágenes del collage Web en su proporción natural. También se añadieron protecciones de grilla para prevenir columnas comprimidas y overflow.
 
+La revisión de CTA convirtió los enlaces accionables de introducción, servicios y Web en botones outline sin relleno. Se unificaron las variantes para fondos claros y oscuros, con borde recto, hover/focus de inversión de contraste y desplazamiento sutil de la flecha. Los CTA primarios rellenos permanecen diferenciados.
+
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.

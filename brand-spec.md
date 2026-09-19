@@ -71,6 +71,8 @@ Se amplió el espaciado entre eyebrow, títulos, párrafos, listas y CTA. Las se
 
 Todos los botones utilizan `border-radius: 0`. Cuando dos CTA aparecen juntos en el hero, comparten el mismo ancho mediante una distribución flexible; en móvil pasan a ocupar el mismo ancho disponible en columna. El overlay azul del hero se mantiene al 50% de opacidad para preservar más detalle de `hero-2026-ok.jpg`.
 
+Los CTA secundarios usan un sistema outline común y sin relleno. En fondos claros se dibujan con borde azul institucional y texto azul; en fondos oscuros usan borde claro y texto blanco o celeste. Ambos tienen el mismo tratamiento de hover/focus: se invierte el contraste con un relleno de la paleta y la flecha se desplaza sutilmente. Los CTA primarios de WhatsApp y envío conservan relleno porque representan la acción principal.
+
 En móvil, la escala tipográfica se reduce con un interlineado más compacto: H1 entre 37.6px y 55.2px, H2 entre 28.8px y 42.4px y H3 entre 20.7px y 23.2px, según el ancho disponible. Los dos CTA del hero se ocultan por completo en pantallas de hasta 680px; el acceso “HABLEMOS” del encabezado permanece disponible.
 
 La revisión UX/UI de la composición corrigió tres causas de desalineación: el encabezado de servicios ahora comparte una grilla de tres columnas con las tarjetas; los enlaces de las tarjetas se ubican después del contenido mediante flexbox, sin superponerse a listas; y los principios de SEO para IA usan un contenedor de texto propio para evitar párrafos comprimidos en la columna numérica. El collage Web conserva la proporción natural de sus imágenes y las grillas aplican `min-width: 0` para evitar condensación o desbordes.

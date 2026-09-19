@@ -85,8 +85,14 @@
   .button-primary:hover { background: #0066B4; box-shadow: 0 16px 30px rgba(0,115,203,.35); }
   .button-small { min-height: 2.65rem; padding-inline: 1rem; }
   .button-large { min-height: 3.65rem; padding-inline: 1.55rem; }
-  .button-outline-light { border-color: rgba(255,255,255,.52); color: var(--white); }
-  .button-outline-light:hover { background: var(--white); border-color: var(--white); color: var(--blue-night); }
+  .button-outline { align-items: center; background: transparent; border: 1px solid; border-radius: 0; display: inline-flex; font-family: var(--font-display); font-size: .75rem; font-weight: 300; gap: .7rem; justify-content: center; letter-spacing: .12em; min-height: 3.35rem; padding: .85rem 1.25rem; text-align: center; text-transform: uppercase; transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease; }
+  .button-outline-dark { border-color: var(--blue-day); color: var(--blue-day); }
+  .button-outline-dark:hover, .button-outline-dark:focus-visible { background: var(--blue-day); border-color: var(--blue-day); color: var(--white); }
+  .button-outline-light { border-color: rgba(255,255,255,.62); color: var(--white); }
+  .button-outline-light:hover, .button-outline-light:focus-visible { background: var(--white); border-color: var(--white); color: var(--blue-night); }
+  .button-outline:hover, .button-outline:focus-visible { transform: translateY(-2px); }
+  .button-outline span { transition: transform .25s ease; }
+  .button-outline:hover span, .button-outline:focus-visible span { transform: translateX(4px); }
   .button-light { background: var(--white); color: var(--blue-night); }
   .button-light:hover { background: #DCEFFF; }
 
@@ -116,8 +122,6 @@
   .intro-content .lead-copy { max-width: 62ch; }
   .intro-content p + p { color: var(--gray-metal); margin-top: 1.7rem; max-width: 56ch; }
   .text-link { align-items: center; color: var(--blue-day); display: inline-flex; font-family: var(--font-display); font-size: .82rem; font-weight: 300; gap: .7rem; letter-spacing: .07em; margin-top: 3rem; text-transform: uppercase; }
-  .button-link-outline { background: transparent; border: 1px solid var(--blue-day); border-radius: 0; min-height: 3.35rem; padding: .85rem 1.25rem; }
-  .button-link-outline:hover { background: var(--blue-day); color: var(--white); }
   .text-link span { font-size: 1.35rem; font-weight: 300; transition: transform .25s ease; }
   .text-link:hover span { transform: translateX(4px); }
 
@@ -144,7 +148,7 @@
   .service-list li { color: var(--gray-metal); font-size: .88rem; padding: .28rem 0 .28rem 1rem; position: relative; }
   .service-list li::before { background: var(--blue-day); content: ''; height: 4px; left: 0; position: absolute; top: .8rem; width: 4px; }
   .service-card-featured .service-list li { color: rgba(255,255,255,.78); }
-  .card-link { color: var(--blue-day); font-family: var(--font-display); font-size: .72rem; font-weight: 300; letter-spacing: .09em; margin-top: auto; padding-top: 2rem; text-transform: uppercase; }
+  .card-link { align-self: flex-start; font-size: .72rem; margin-top: auto; }
   .service-card-featured .card-link { color: #8DCAEF; }
   .card-link span { font-size: 1.2rem; padding-left: .45rem; }
 
