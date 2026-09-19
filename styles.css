@@ -310,7 +310,7 @@
   .hero-copy h1 { max-width: 12ch; }
   .section-heading { grid-template-columns: 1fr; }
   .section-heading > div, .heading-aside { grid-column: auto; padding: 0; }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid { gap: 2rem; grid-template-columns: 1fr; }
   .service-card { min-height: auto; padding-bottom: 2.5rem; }
   .benefits-grid, .method-layout, .web-grid, .agency-grid, .faq-grid, .contact-grid { gap: 3.5rem; grid-template-columns: 1fr; }
   .benefits-media { max-width: 42rem; }
