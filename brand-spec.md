@@ -82,3 +82,7 @@ La revisión UX/UI de la composición corrigió tres causas de desalineación: e
 ## Tracking
 
 GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento.
+
+## Formulario y contacto
+
+El formulario de contacto prioriza una captura breve y ordenada: Nombre y Apellido, Email, Teléfono obligatorio, Página web opcional, presupuesto actual de marketing mediante selector y descripción del proyecto. Los datos alternativos —email, llamada y ubicación— se presentan fuera del formulario en un bloque independiente para evitar que el panel de carga resulte extenso o visualmente pesado. La distribución usa dos columnas en escritorio y una columna en móvil.

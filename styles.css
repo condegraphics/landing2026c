@@ -239,17 +239,30 @@
   .contact-copy h2 { margin-bottom: 2.6rem; max-width: 12ch; }
   .contact-copy .lead-copy { color: rgba(255,255,255,.78); }
   .contact-copy .button { margin-top: 3rem; }
+  .contact-stack { display: grid; gap: 1px; }
   .contact-panel { background: var(--white); color: var(--ink); padding: clamp(1.5rem, 4vw, 2.5rem); }
   .contact-panel-heading { align-items: center; color: var(--gray-metal); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; justify-content: space-between; letter-spacing: .14em; margin-bottom: 1rem; }
   .contact-dot { background: var(--blue-day); border-radius: 50%; height: .5rem; width: .5rem; }
+  .contact-details { background: rgba(255,255,255,.06); border: 1px solid rgba(141,202,239,.2); color: var(--white); padding: 1.5rem clamp(1.5rem, 4vw, 2.5rem); }
+  .contact-details .contact-panel-heading { color: rgba(255,255,255,.65); }
+  .contact-details-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .contact-line { align-items: start; border-top: 1px solid var(--gray-line); display: flex; flex-direction: column; gap: .18rem; padding: .85rem 0; }
   .contact-line span { color: var(--gray-metal); font-family: var(--font-display); font-size: .62rem; font-weight: 300; letter-spacing: .14em; }
   .contact-line strong { color: var(--blue-night); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
-  .contact-form { border-top: 1px solid var(--gray-line); display: grid; gap: .5rem; margin-top: .65rem; padding-top: 1.4rem; }
+  .contact-details .contact-line { border-color: rgba(255,255,255,.2); }
+  .contact-details .contact-line span { color: #8DCAEF; }
+  .contact-details .contact-line strong { color: var(--white); }
+  .contact-form { display: grid; gap: .8rem; margin-top: .5rem; }
+  .form-fields-grid { display: grid; gap: .85rem 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-field { display: grid; gap: .38rem; min-width: 0; }
+  .form-field-full { grid-column: 1 / -1; }
   .contact-form label { color: var(--gray-metal); font-family: var(--font-display); font-size: .72rem; font-weight: 300; margin-top: .3rem; }
-  .contact-form input, .contact-form textarea { background: var(--blue-pale); border: 1px solid transparent; border-radius: 0; color: var(--ink); padding: .75rem; resize: vertical; width: 100%; }
-  .contact-form input:focus, .contact-form textarea:focus { background: var(--white); border-color: var(--blue-day); outline: none; }
-  .contact-form .button { border: 0; margin-top: .65rem; }
+  .contact-form label span { color: var(--gray-metal); font-size: .68rem; }
+  .contact-form input, .contact-form select, .contact-form textarea { background: var(--blue-pale); border: 1px solid transparent; border-radius: 0; color: var(--ink); font: inherit; min-height: 3rem; padding: .75rem; resize: vertical; width: 100%; }
+  .contact-form select { appearance: auto; cursor: pointer; }
+  .contact-form textarea { min-height: 8rem; }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { background: var(--white); border-color: var(--blue-day); outline: none; }
+  .contact-form .button { border: 0; justify-self: start; margin-top: .65rem; }
   .form-note { color: var(--gray-metal); font-size: .72rem; line-height: 1.35; }
 
   .site-footer { background: var(--black); color: var(--white); padding: 3rem 0 1.25rem; }
@@ -306,6 +319,7 @@
   .web-collage { max-width: 44rem; }
   .agency-photo { max-width: 30rem; }
   .faq-intro > p:not(.eyebrow) { max-width: 45ch; }
+  .contact-details-grid { gap: 1rem; }
 }
 
 @media (max-width: 680px) {
@@ -343,6 +357,10 @@
   .agency-facts strong { font-size: .95rem; }
   .agency-facts span { font-size: .67rem; }
   .contact-panel { padding: 1.3rem; }
+  .contact-details { padding: 1.3rem; }
+  .form-fields-grid, .contact-details-grid { grid-template-columns: 1fr; }
+  .form-field-full { grid-column: auto; }
+  .contact-form .button { justify-self: stretch; }
   .footer-top { align-items: start; grid-template-columns: 1fr; }
   .footer-links { justify-content: start; }
   .footer-bottom { flex-direction: column; gap: .4rem; }

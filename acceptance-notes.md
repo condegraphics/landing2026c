@@ -36,6 +36,8 @@ Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`
 
 Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.
 
+El formulario fue reorganizado para reducir su extensión visual. “Nombre” pasó a “Nombre y Apellido”; se agregó Teléfono como campo obligatorio, Página web como campo opcional y un selector obligatorio para el presupuesto actual de marketing con las cinco opciones solicitadas. Email y descripción del proyecto se conservaron. “Otras formas de contacto”, email, llamada y ubicación quedaron fuera del formulario en una tarjeta independiente responsive.
+
 ## Tipografía
 
 La versión actual utiliza Merriweather Sans como familia única. Los títulos `h1`, `h2` y `h3` usan peso 800; el resto de la interfaz usa peso 300.
