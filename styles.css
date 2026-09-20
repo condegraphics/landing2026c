@@ -187,7 +187,7 @@
   .method { padding: clamp(7rem, 12vw, 11rem) 0; }
   .method-layout { align-items: start; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
   .method-image { position: relative; }
-  .method-image img { box-shadow: var(--shadow-soft); width: 100%; }
+  .method-image img { box-shadow: var(--shadow-soft); height: auto; width: 100%; }
   .method-steps { border-top: 1px solid var(--gray-line); }
   .method-step { border-bottom: 1px solid var(--gray-line); display: grid; gap: 1.25rem; grid-template-columns: 2.2rem 1fr; padding: 1.55rem 0; }
   .step-number { color: var(--blue-day); font-family: var(--font-display); font-size: .8rem; font-weight: 300; }
@@ -202,10 +202,8 @@
   .check-list { border-top: 1px solid var(--gray-line); margin-top: 2rem; padding-top: .8rem; }
   .check-list li { border-bottom: 1px solid var(--gray-line); color: var(--ink); font-size: .9rem; padding: .75rem 0 .75rem 1.35rem; position: relative; }
   .check-list li::before { border-bottom: 1px solid var(--blue-day); border-right: 1px solid var(--blue-day); content: ''; height: .42rem; left: .1rem; position: absolute; top: 1rem; transform: rotate(45deg); width: .25rem; }
-  .web-collage { min-height: 34rem; position: relative; }
-  .collage-main { aspect-ratio: 1000 / 691; box-shadow: var(--shadow-blue); height: auto; object-fit: cover; width: 80%; }
-  .collage-small { aspect-ratio: 1000 / 563; border: .75rem solid var(--blue-pale); bottom: 0; box-shadow: var(--shadow-soft); height: auto; object-fit: cover; position: absolute; right: 0; width: 47%; }
-  .collage-number { bottom: 1.3rem; color: var(--white); font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; left: 1.7rem; position: absolute; }
+  .web-collage { align-self: center; position: relative; }
+  .web-collage .web-image { aspect-ratio: 4 / 5; box-shadow: var(--shadow-blue); display: block; height: auto; margin-inline: auto; max-width: 32rem; object-fit: cover; width: 100%; }
 
   .agency { padding: clamp(7rem, 12vw, 11rem) 0; }
   .agency-grid { align-items: center; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); }
@@ -329,7 +327,7 @@
       .benefits-media img,
       .method-image img,
       .agency-photo img,
-      .web-collage .collage-main {
+      .web-collage .web-image {
         animation: photo-enter linear both;
         animation-range: entry 0% cover 40%;
         animation-timeline: view();
@@ -343,14 +341,6 @@
         transform-origin: center;
       }
 
-      @media (min-width: 901px) {
-        .collage-small {
-          animation: collage-depth linear both;
-          animation-range: entry 0% exit 100%;
-          animation-timeline: view();
-          transform-origin: center;
-        }
-      }
     }
   }
 
@@ -384,12 +374,6 @@
       transform: scale(1);
     }
   }
-
-  @keyframes collage-depth {
-    from { transform: translateY(1rem) rotate(.25deg); }
-    to { transform: translateY(-1rem) rotate(-.25deg); }
-  }
-
   @keyframes enter-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   @supports not (animation-timeline: view()) {
     .reveal { animation: fallback-fade .7s ease both; }
@@ -476,10 +460,8 @@
   .benefits-media img { min-height: 16rem; object-fit: cover; }
   .image-label { bottom: .65rem; font-size: .54rem; left: .65rem; }
   .ai-section { padding-bottom: 6rem; }
-  .web-collage { min-height: 24rem; }
-  .collage-main { height: auto; width: 86%; }
-  .collage-small { border-width: .45rem; height: auto; width: 50%; }
-  .collage-number { bottom: .8rem; font-size: 2rem; left: 1rem; }
+  .web-collage { min-height: auto; }
+  .web-collage .web-image { max-width: 32rem; }
   .agency-facts { gap: .5rem; }
   .agency-facts strong { font-size: .95rem; }
   .agency-facts span { font-size: .67rem; }
