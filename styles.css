@@ -314,19 +314,24 @@
 
     @supports (animation-timeline: view()) {
       .intro-content h2,
+      .section-heading h2,
+      .benefits-content h2,
       .ai-copy h2,
-      .method-heading h2,
+      .web-copy h2,
+      .agency-copy h2,
+      .faq-intro h2,
       .contact-copy h2 {
         animation: heading-reveal linear both;
-        animation-range: entry 0% cover 30%;
+        animation-range: entry 0% cover 40%;
         animation-timeline: view();
       }
 
       .benefits-media img,
       .method-image img,
-      .agency-photo img {
+      .agency-photo img,
+      .web-collage .collage-main {
         animation: photo-enter linear both;
-        animation-range: entry 0% cover 32%;
+        animation-range: entry 0% cover 40%;
         animation-timeline: view();
         transform-origin: center;
       }
@@ -360,8 +365,8 @@
 
   @keyframes heading-reveal {
     from {
-      opacity: .55;
-      transform: translateY(.7rem);
+      opacity: .35;
+      transform: translateY(.9rem);
     }
     to {
       opacity: 1;
@@ -371,8 +376,8 @@
 
   @keyframes photo-enter {
     from {
-      opacity: .72;
-      transform: scale(1.025);
+      opacity: .8;
+      transform: scale(1.035);
     }
     to {
       opacity: 1;
