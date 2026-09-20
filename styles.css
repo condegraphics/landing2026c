@@ -175,7 +175,10 @@
   .benefit-item p { color: var(--gray-metal); font-size: .88rem; line-height: 1.45; }
 
   .ai-section { overflow: hidden; padding: clamp(8rem, 13vw, 12rem) 0; }
-  .ai-media { background-image: url('img/54251.jpg'); background-position: center; background-size: cover; opacity: .42; }
+  .ai-media { background-image: url('img/54251-optimized.jpg'); background-position: center; background-size: cover; opacity: .42; }
+  @supports (background-image: image-set(url('img/54251.webp') type('image/webp'))) {
+    .ai-media { background-image: image-set(url('img/54251.webp') type('image/webp') 1x, url('img/54251-optimized.jpg') type('image/jpeg') 1x); }
+  }
   .ai-overlay { background: linear-gradient(100deg, rgba(0,33,94,.98) 0%, rgba(0,33,94,.9) 47%, rgba(0,33,94,.56) 100%); }
   .ai-grid { display: grid; gap: clamp(4rem, 8vw, 9rem); grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); position: relative; z-index: 1; }
   .ai-copy .eyebrow { margin-bottom: 2rem; }
