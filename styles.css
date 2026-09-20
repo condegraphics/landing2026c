@@ -294,6 +294,18 @@
 
 @layer motion {
   @media (prefers-reduced-motion: no-preference) {
+    /* Los bloques que contienen H2 quedan estáticos; el movimiento se concentra en cada título. */
+    .intro-content.reveal,
+    .section-heading.reveal,
+    .benefits-content.reveal,
+    .ai-copy.reveal,
+    .web-copy.reveal,
+    .agency-copy.reveal,
+    .faq-intro.reveal,
+    .contact-copy.reveal {
+      animation: none;
+    }
+
     @supports (animation-timeline: scroll()) {
       body:not(.thank-you-body)::before {
         background: var(--blue-day);
@@ -321,8 +333,8 @@
       .agency-copy h2,
       .faq-intro h2,
       .contact-copy h2 {
-        animation: heading-reveal linear both;
-        animation-range: entry 0% cover 40%;
+        animation: h2-fade-up linear both;
+        animation-range: entry 0% cover 35%;
         animation-timeline: view();
       }
 
@@ -355,10 +367,10 @@
     to { transform: scale(1); }
   }
 
-  @keyframes heading-reveal {
+  @keyframes h2-fade-up {
     from {
-      opacity: .35;
-      transform: translateY(.9rem);
+      opacity: 0;
+      transform: translateY(1.5rem);
     }
     to {
       opacity: 1;
