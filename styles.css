@@ -159,8 +159,6 @@
   .benefits-grid { align-items: center; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
   .benefits-media { position: relative; }
   .benefits-media img { box-shadow: var(--shadow-blue); height: auto; width: 100%; }
-  .image-label { background: var(--white); bottom: 1rem; color: var(--blue-night); font-family: var(--font-display); font-size: .62rem; font-weight: 300; left: 1rem; letter-spacing: .13em; padding: .7rem .85rem; position: absolute; }
-  .image-label-dark { background: var(--blue-night); color: var(--white); }
   .benefits-content .eyebrow { margin-bottom: 1.75rem; }
   .benefits-content h2 { margin-bottom: 2.5rem; max-width: 100%; }
   .benefits-content .lead-copy { color: var(--gray-metal); margin-bottom: 2.8rem; }
@@ -211,9 +209,7 @@
   .agency { padding: clamp(7rem, 12vw, 11rem) 0; }
   .agency-grid { align-items: center; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); }
   .agency-photo { position: relative; }
-  .agency-photo img { aspect-ratio: 1; box-shadow: var(--shadow-blue); object-fit: cover; width: 100%; }
-  .agency-year { background: var(--blue-day); bottom: -1.25rem; color: var(--white); font-family: var(--font-display); font-size: .75rem; font-weight: 300; letter-spacing: .1em; padding: 1rem 1.25rem; position: absolute; right: -1.25rem; }
-  .agency-year strong { display: block; font-size: 1.55rem; letter-spacing: -.02em; line-height: 1; margin-top: .2rem; }
+  .agency-photo img { box-shadow: var(--shadow-blue); height: auto; width: 100%; }
   .agency-copy .eyebrow { margin-bottom: 1.75rem; }
   .agency-copy h2 { margin-bottom: 2.6rem; max-width: 100%; }
   .agency-copy > p:not(.eyebrow) + p { color: var(--gray-metal); margin-top: 1.7rem; }
@@ -476,7 +472,6 @@
   .service-card-top { margin-bottom: 2.5rem; }
   .card-link { align-self: stretch; }
   .benefits-media img { min-height: 16rem; object-fit: cover; }
-  .image-label { bottom: .65rem; font-size: .54rem; left: .65rem; }
   .ai-section { padding-bottom: 6rem; }
   .web-collage { min-height: auto; }
   .web-collage .web-image { max-width: 32rem; }
