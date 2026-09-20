@@ -108,9 +108,7 @@
   .hero-copy { max-width: 45rem; }
   .hero-copy h1 { font-size: clamp(3.5rem, 5.5vw, 4.375rem); line-height: 1.1; margin-bottom: 1.8rem; max-width: 11ch; }
   .hero-lead { color: rgba(255,255,255,.88); font-size: clamp(1.2rem, 2vw, 1.55rem); line-height: 1.45; max-width: 29ch; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2.35rem; }
-  .hero-actions .button { flex: 1 1 0; min-width: 13rem; }
-  .hero-note { border-left: 2px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 2.25rem; padding-left: .85rem; }
+  .hero-note { border-left: 2px solid rgba(141,202,239,.7); color: rgba(255,255,255,.62); font-size: .82rem; line-height: 1.45; margin-top: 1.7rem; padding-left: .85rem; }
   .scroll-cue { align-items: center; bottom: 2.25rem; color: rgba(255,255,255,.68); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; gap: .65rem; left: 50%; letter-spacing: .2em; position: absolute; transform: translateX(-50%); z-index: 2; }
   .scroll-cue span { border: 1px solid var(--blue-day); border-radius: 50%; height: 1.5rem; position: relative; width: 1.5rem; }
   .scroll-cue span::after { border-bottom: 1px solid var(--blue-day); border-right: 1px solid var(--blue-day); content: ''; height: .35rem; left: .52rem; position: absolute; top: .42rem; transform: rotate(45deg); width: .35rem; }
@@ -125,9 +123,6 @@
   .intro-content .lead-copy { max-width: 62ch; }
   .intro-content p + p { color: var(--gray-metal); margin-top: 1.7rem; max-width: 56ch; }
   .intro-content > p:not(.eyebrow) + p { max-width: 72ch; }
-  .text-link { align-items: center; color: var(--blue-day); display: inline-flex; font-family: var(--font-display); font-size: .82rem; font-weight: 300; gap: .7rem; letter-spacing: .07em; margin-top: 3rem; text-transform: uppercase; }
-  .text-link span { font-size: 1.35rem; font-weight: 300; transition: transform .25s ease; }
-  .text-link:hover span { transform: translateX(4px); }
 
   .services { padding: clamp(7rem, 12vw, 11rem) 0; }
   .section-heading { align-items: end; display: grid; gap: 1px; grid-template-columns: minmax(0, 1fr); justify-content: space-between; margin-bottom: 5.5rem; }
@@ -186,7 +181,6 @@
   .ai-copy h2 { margin-bottom: 2.8rem; max-width: 100%; }
   .ai-copy .lead-copy { color: rgba(255,255,255,.88); }
   .ai-copy > p:not(.eyebrow) + p { color: rgba(255,255,255,.72); margin-top: 1.7rem; }
-  .ai-copy .button { margin-top: 3rem; }
   .ai-principles { align-self: center; border-top: 1px solid rgba(255,255,255,.28); }
   .principle { border-bottom: 1px solid rgba(255,255,255,.28); display: grid; gap: 1.25rem; grid-template-columns: 2rem minmax(0, 1fr); padding: 1.65rem 0; }
   .principle span { color: #8DCAEF; font-family: var(--font-display); font-size: .78rem; font-weight: 300; }
@@ -247,7 +241,6 @@
   .contact-copy .eyebrow { margin-bottom: 1.75rem; }
   .contact-copy h2 { margin-bottom: 2.6rem; max-width: 100%; }
   .contact-copy .lead-copy { color: rgba(255,255,255,.78); }
-  .contact-copy .button { margin-top: 3rem; }
   .contact-stack { display: grid; gap: 1px; }
   .contact-panel { background: var(--white); color: var(--ink); padding: clamp(1.5rem, 4vw, 2.5rem); }
   .contact-panel-heading { align-items: center; color: var(--gray-metal); display: flex; font-family: var(--font-display); font-size: .68rem; font-weight: 300; justify-content: space-between; letter-spacing: .14em; margin-bottom: 1rem; }
@@ -473,7 +466,6 @@
   .hero-grid { min-height: auto; }
   .hero-copy h1 { font-size: clamp(2.35rem, 9.5vw, 3.45rem); line-height: 1.01; margin-bottom: 1.25rem; max-width: 11ch; }
   .hero-lead { font-size: 1.13rem; }
-  .hero-actions { display: none; }
   .hero-note { display: none; }
   .scroll-cue { bottom: 1.4rem; }
   .intro-grid { grid-template-columns: 1fr; }
