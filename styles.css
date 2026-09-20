@@ -277,10 +277,14 @@
   .footer-bottom { color: rgba(255,255,255,.42); display: flex; font-size: .72rem; justify-content: space-between; padding-top: 1.2rem; }
 }
 
+@media (min-width: 901px) {
+  .method-image { position: sticky; top: clamp(5rem, 10vh, 8rem); }
+}
+
 @layer utilities {
   .reveal { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: no-preference) {
-    .reveal { animation: enter-up .8s cubic-bezier(.22, .8, .24, 1) both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+    .reveal { animation: enter-up .8s cubic-bezier(.22, .8, .24, 1) both; animation-timeline: view(); animation-range: entry 0% cover 24%; }
     .reveal-delay-1 { animation-delay: .08s; }
     .reveal-delay-2 { animation-delay: .16s; }
     .reveal-delay-3 { animation-delay: .24s; }
@@ -289,6 +293,58 @@
 }
 
 @layer motion {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      body:not(.thank-you-body)::before {
+        background: var(--blue-day);
+        content: '';
+        height: 2px;
+        inset: 0 auto auto 0;
+        pointer-events: none;
+        position: fixed;
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        width: 100%;
+        z-index: 50;
+
+        animation: page-progress linear both;
+        animation-timeline: scroll(root block);
+      }
+    }
+
+    @supports (animation-timeline: view()) {
+      .hero-media {
+        animation: hero-depth linear both;
+        animation-range: cover exit;
+        animation-timeline: view();
+        transform-origin: center;
+      }
+
+      @media (min-width: 901px) {
+        .collage-small {
+          animation: collage-depth linear both;
+          animation-range: entry 0% exit 100%;
+          animation-timeline: view();
+          transform-origin: center;
+        }
+      }
+    }
+  }
+
+  @keyframes page-progress {
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes hero-depth {
+    from { transform: scale(1.015); }
+    to { transform: scale(1); }
+  }
+
+  @keyframes collage-depth {
+    from { transform: translateY(1rem) rotate(.25deg); }
+    to { transform: translateY(-1rem) rotate(-.25deg); }
+  }
+
   @keyframes enter-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
   @supports not (animation-timeline: view()) {
     .reveal { animation: fallback-fade .7s ease both; }
