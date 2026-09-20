@@ -1,9 +1,9 @@
 # Acceptance notes — Conde Graphics landing
 
-**URL pública:** https://condegraphics.github.io/landing2026c/  
-**Repositorio público:** https://github.com/condegraphics/landing2026c  
-**Rama publicada:** `landing-onepage`  
-**Fecha:** 2026-09-18  
+**URL pública:** https://www.condegraphics.com/
+**Repositorio público:** https://github.com/condegraphics/landing2026c
+**Rama publicada:** `landing-onepage`
+**Fecha:** 2026-09-18
 **Estado:** publicación y revisión pública completadas.
 
 ## Acceptance scope

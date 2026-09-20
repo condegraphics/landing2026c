@@ -32,6 +32,6 @@ Luego abrir `http://localhost:8000`.
 
 Landing publicada como sitio público de GitHub Pages desde la rama `landing-onepage`:
 
-`https://condegraphics.github.io/landing2026c/`
+`https://www.condegraphics.com/`
 
 El repositorio también es público. GA4, Google Ads, Google Tag Manager y Meta quedan pendientes de activación; esta versión no carga scripts de medición activos.
