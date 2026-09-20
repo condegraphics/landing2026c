@@ -135,6 +135,9 @@
   .section-heading h2 { max-width: 22ch; }
   .heading-aside { color: var(--gray-metal); font-size: 1.05rem; line-height: 1.5; max-width: 32ch; padding: 0 clamp(1.5rem, 3vw, 2.7rem); }
   .section-heading .heading-aside { margin-top: 1.45rem; padding: 0; }
+  .method-heading > div { max-width: 58rem; }
+  .method-heading h2 { margin-bottom: 2.5rem; }
+  .method-heading .lead-copy { color: var(--gray-metal); max-width: 62ch; }
   .services-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); }
   .service-card { background: var(--blue-pale); border-top: 4px solid var(--gray-line); display: flex; flex-direction: column; min-height: 39rem; padding: clamp(1.5rem, 3vw, 2.7rem); position: relative; transition: background-color .3s ease, border-color .3s ease, transform .3s ease; }
   .service-card:hover { background: var(--blue-ice); border-color: var(--blue-day); transform: translateY(-6px); z-index: 1; }
