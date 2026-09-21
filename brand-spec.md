@@ -81,7 +81,7 @@ La revisión UX/UI de la composición corrigió tres causas de desalineación: e
 
 ## Tracking
 
-GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento. Para la etapa demo, el formulario usa Web3Forms como receptor temporal de consultas y envía las notificaciones a `clubconde@gmail.com`. La Access Key es una clave pública requerida por el endpoint del servicio y no se trata como contraseña privada. La configuración deberá revisarse y reemplazarse por una solución propia al migrar al dominio final.
+GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento. El formulario no depende de una plataforma externa: el HTML publica los datos por POST al endpoint propio `contact.php` alojado en Hostinger, que prepara una notificación multipart HTML + texto plano y redirige a `gracias.html` después de aceptar el envío. La entrega definitiva requiere validar en Hostinger el servidor de correo, SPF, DKIM y DMARC del dominio.
 
 ## Formulario y contacto
 
@@ -89,11 +89,11 @@ El formulario de contacto prioriza una captura breve y ordenada: Nombre y Apelli
 
 En desktop, el bloque de contacto se distribuye en dos columnas 50/50: propuesta y texto a la izquierda, formulario a la derecha. Los valores del bloque de contacto alternativo usan una escala menor, `overflow-wrap` y un interlineado controlado para evitar choques entre email, teléfono y ubicación.
 
-El envío demo utiliza `https://api.web3forms.com/submit`, asunto `Nueva consulta comercial — Conde Graphics`, remitente `Conde Graphics` y redirección a `gracias.html`. La página de confirmación comunica recepción de la consulta y respuesta estimada en 24 a 48 horas con tono B2B.
+El envío propio utiliza `https://www.condegraphics.com/contact.php`, asunto `Nueva consulta Web — [nombre]`, remitente `info@condegraphics.com`, `Reply-To` del potencial cliente y redirección a `gracias.html`. El correo usa tablas, estilos inline, paleta azul institucional y una parte alternativa de texto plano para mantener una lectura compatible con clientes de correo que no renderizan HTML. El endpoint valida campos, email, presupuesto, longitud de entradas y honeypot antes de procesar el envío.
 
 La Página web es opcional y se captura como texto con teclado de URL: acepta tanto dominios abreviados como URLs completas sin obligar a la persona a recordar `https://` ni bloquear el envío por un formato incompleto.
 
-La confirmación principal se resuelve inline dentro del panel del formulario, con estado de envío, éxito o error, `aria-live` y foco accesible. No se usa popup de navegador ni modal bloqueante. `gracias.html` queda como fallback para casos sin JavaScript y se presenta como tarjeta compacta, no como una pantalla de impacto full width.
+La confirmación se resuelve mediante una redirección HTTP 303 a `gracias.html` después de que el servidor acepta el envío. No depende de JavaScript ni de un popup de navegador, por lo que conserva el flujo aun cuando el usuario navega desde la versión estática de GitHub Pages. La página se presenta como tarjeta compacta, no como una pantalla de impacto full width.
 
 ### Espaciado lateral móvil
 

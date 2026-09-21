@@ -34,15 +34,15 @@ En la grilla de servicios se extendió la altura de las tarjetas para separar el
 
 Los siguientes recursos respondieron HTTP 200: `/`, `/styles.css`, `/robots.txt`, `/sitemap.xml`, `/img/11062.jpg` y `/img/logo-conde-graphics-agencia-seo-argentina-260px.png`.
 
-Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario usa `mailto:info@condegraphics.com` y muestra explícitamente que abrirá el cliente de correo del visitante.
+Los destinos principales están preparados para WhatsApp, email, llamada y anclas internas. El formulario publica la consulta en el endpoint propio del sitio y conserva email y llamada como alternativas visibles fuera del formulario.
 
 El formulario fue reorganizado para reducir su extensión visual. “Nombre” pasó a “Nombre y Apellido”; se agregó Teléfono como campo obligatorio, Página web como campo opcional y un selector obligatorio para el presupuesto actual de marketing con las cinco opciones solicitadas. Email y descripción del proyecto se conservaron. “Otras formas de contacto”, email, llamada y ubicación quedaron fuera del formulario en una tarjeta independiente responsive.
 
 La revisión desktop posterior corrigió la proporción del bloque principal a 50/50 y redujo la escala de los valores de email, teléfono y ubicación en la tarjeta inferior. También se añadió quiebre de línea seguro para impedir que esos textos se pisen o se interpongan entre columnas.
 
-La etapa demo reemplazó el comportamiento `mailto:` por Web3Forms. El formulario publica sus campos mediante POST al endpoint oficial del servicio, mantiene validación HTML, incluye protección honeypot y redirige a una página corporativa propia de confirmación. El receptor configurado es `clubconde@gmail.com`; la solución es temporal para pruebas y deberá reemplazarse por una recepción propia al pasar al dominio final.
+La solución propia reemplaza completamente el flujo temporal anterior. El formulario publica sus campos mediante POST a `contact.php` en Hostinger, mantiene validación HTML, incluye protección honeypot, valida nuevamente en servidor y redirige por HTTP 303 a `gracias.html`. El endpoint prepara un correo multipart `text/plain` + `text/html`, con tablas y estilos inline en la paleta azul institucional, para que la notificación sea legible en clientes de correo con y sin soporte HTML. El remitente queda fijado en `info@condegraphics.com` y el `Reply-To` utiliza el email del potencial cliente; la entrega depende de validar SMTP o mail local, SPF, DKIM y DMARC en Hostinger/Google Workspace.
 
-La experiencia posterior al envío fue revisada según buenas prácticas de feedback accesible: la ruta normal mantiene al usuario en la Home y muestra un mensaje inline con `aria-live`, estado de envío, éxito o error y foco accesible. No se usa popup de navegador ni modal bloqueante. La redirección a `gracias.html` permanece como fallback si JavaScript no está disponible, ahora con una tarjeta visual compacta y menos invasiva.
+La experiencia posterior al envío fue revisada según buenas prácticas de feedback accesible: la ruta normal muestra `gracias.html` como confirmación explícita y no depende de JavaScript, popup de navegador ni modal bloqueante. La tarjeta visual es compacta y comunica recepción correcta y respuesta estimada de 24 a 48 horas.
 
 La revisión móvil amplió el aire lateral mediante un gutter fluido de aproximadamente 5 % adicional por lado. Se preservan la navegación, los campos del formulario, los CTA y la estructura de secciones; el cambio queda limitado al espaciado horizontal del contenedor en viewport de hasta 680 px.
 
