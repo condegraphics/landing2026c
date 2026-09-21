@@ -314,6 +314,7 @@
               </div>
               <div class="cf-turnstile" data-sitekey="0x4AAAAAAE-8vP0SYcEDAPU6" data-action="contact" data-appearance="interaction-only" data-language="es" aria-label="Verificación de seguridad"></div>
               <button class="button button-light" id="contact-submit" type="submit">ENVIAR CONSULTA</button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
               <p class="form-note">Tus datos se enviarán de forma segura para analizar tu proyecto.</p>
             </form>
           </div>
@@ -334,6 +335,47 @@
     <div class="container footer-top"><a class="brand brand-footer" href="#inicio" aria-label="Conde Graphics, volver al inicio"><img src="img/logo-conde-graphics-seo-agency.svg" alt="Conde Graphics" width="297" height="100"></a><p>SEO, SEM y Web para construir una presencia digital más visible, clara y útil.</p><div class="footer-links"><a href="https://www.instagram.com/condegraphics/" target="_blank" rel="noopener">Instagram</a><a href="https://es-la.facebook.com/condegraphics/" target="_blank" rel="noopener">Facebook</a><a href="https://twitter.com/condegraphics" target="_blank" rel="noopener">X / Twitter</a></div></div>
     <div class="container footer-bottom"><span>© 2026 Conde Graphics. Todos los derechos reservados.</span><span>Buenos Aires · Argentina · LATAM</span></div>
   </footer>
+
+  <script>
+    (() => {
+      const form = document.getElementById('contact-form');
+      const submitButton = document.getElementById('contact-submit');
+      const status = document.getElementById('form-status');
+      if (!form || !submitButton || !status) return;
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+        status.hidden = false;
+        status.className = 'form-status is-pending';
+        status.textContent = 'Enviando consulta…';
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json', 'X-Requested-With': 'XMLHttpRequest' }
+          });
+          const result = await response.json();
+          if (!response.ok || result.success !== true) {
+            throw new Error(result.message || 'No pudimos enviar la consulta.');
+          }
+
+          form.reset();
+          if (window.turnstile) window.turnstile.reset();
+          status.className = 'form-status is-success';
+          status.textContent = 'Recibimos tu información. Analizaremos tus objetivos y oportunidades de crecimiento para enviarte una primera orientación.';
+        } catch (error) {
+          status.className = 'form-status is-error';
+          status.textContent = error.message || 'No pudimos enviar la consulta. Probá nuevamente.';
+        } finally {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-busy');
+        }
+      });
+    })();
+  </script>
 
   <!-- Medición pendiente de activación: GA4 / Google Ads / GTM / Meta. No se cargan scripts de medición en esta versión. -->
 </body>

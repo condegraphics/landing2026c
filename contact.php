@@ -15,7 +15,6 @@ const RECIPIENT_EMAIL = 'info@condegraphics.com';
 const SENDER_EMAIL = 'info@condegraphics.com';
 const SENDER_NAME = 'Conde Graphics';
 const SITE_URL = 'https://www.condegraphics.com/';
-const THANK_YOU_URL = 'https://www.condegraphics.com/gracias.html';
 const MAX_NAME_LENGTH = 120;
 const MAX_EMAIL_LENGTH = 254;
 const MAX_PHONE_LENGTH = 60;
@@ -59,9 +58,28 @@ function clean_header_value(string $value): string
 function show_error(string $message): void
 {
     http_response_code(400);
+    if (request_wants_json()) {
+        header('Content-Type: application/json; charset=UTF-8', true);
+        echo json_encode(['success' => false, 'message' => $message], JSON_UNESCAPED_UNICODE);
+        exit;
+    }
     header('Content-Type: text/html; charset=UTF-8', true);
     $safeMessage = escape_html($message);
     echo '<!doctype html><html lang="es-AR"><meta charset="utf-8"><title>Consulta no enviada | Conde Graphics</title><body style="font-family:Arial,sans-serif;max-width:42rem;margin:4rem auto;padding:1.5rem;color:#111820"><h1>No pudimos enviar la consulta</h1><p>' . $safeMessage . '</p><p><a href="' . escape_html(SITE_URL . '#contacto') . '">Volver al formulario</a> o escribir a <a href="mailto:' . escape_html(RECIPIENT_EMAIL) . '">' . escape_html(RECIPIENT_EMAIL) . '</a>.</p></body></html>';
+    exit;
+}
+
+function request_wants_json(): bool
+{
+    $accept = strtolower($_SERVER['HTTP_ACCEPT'] ?? '');
+    $requestedWith = strtolower($_SERVER['HTTP_X_REQUESTED_WITH'] ?? '');
+    return str_contains($accept, 'application/json') || $requestedWith === 'xmlhttprequest';
+}
+
+function show_success(): void
+{
+    header('Content-Type: application/json; charset=UTF-8', true);
+    echo json_encode(['success' => true], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -103,8 +121,7 @@ function validate_turnstile(string $token, string $secret): array
 
 // Rechaza envíos automatizados que completan el campo invisible.
 if (post_value('botcheck') !== '') {
-    header('Location: ' . THANK_YOU_URL, true, 303);
-    exit;
+    show_error('No pudimos validar la consulta.');
 }
 
 // Acepta el formulario desde la versión publicada y desde GitHub Pages.
@@ -240,5 +257,4 @@ try {
     show_error('El servidor no pudo entregar el correo en este momento. Probá nuevamente o escribinos por email.');
 }
 
-header('Location: ' . THANK_YOU_URL, true, 303);
-exit;
+show_success();

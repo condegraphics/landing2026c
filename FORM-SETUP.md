@@ -66,7 +66,7 @@ El endpoint contiene los valores públicos del relay: servidor, puerto, TLS y au
 1. Abrir `https://www.condegraphics.com/`.
 2. Completar el formulario con datos de prueba, no con un lead real.
 3. Enviar una sola vez.
-4. Verificar que el navegador llegue a `https://www.condegraphics.com/gracias.html`.
+4. Verificar que el formulario muestre la confirmación breve dentro de la misma landing, sin cambiar de URL.
 5. Revisar `info@condegraphics.com` en Recibidos, Spam y Promociones.
 6. Confirmar que el correo muestre una tabla HTML con nombre, email, teléfono, página web, presupuesto y mensaje.
 7. Responder el email recibido y verificar que el botón o la acción de respuesta utilice el `Reply-To` del potencial cliente.
@@ -77,4 +77,4 @@ Si no llega el mensaje, revisar el log de errores PHP de Hostinger. El endpoint 
 
 No se guardan credenciales en GitHub ni en Hostinger. El código utiliza PHPMailer 6.9.3, distribuido bajo LGPL-2.1, y conserva su archivo de licencia en `lib/PHPMailer/LICENSE`. La seguridad depende de la regla de Google Admin, la IP autorizada y TLS. No se debe activar el modo de depuración SMTP en producción porque podría exponer información del servidor.
 
-El formulario conserva la confirmación `gracias.html`, el honeypot, la validación del navegador y la validación server-side. El correo se genera como HTML con estilos inline y también incluye una parte de texto plano para clientes de correo que no renderizan HTML.
+El formulario confirma el envío dentro de la misma landing mediante una respuesta JSON y feedback accesible. Conserva el honeypot, la validación del navegador y la validación server-side. El correo se genera como HTML con estilos inline y también incluye una parte de texto plano para clientes de correo que no renderizan HTML.
