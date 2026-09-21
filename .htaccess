@@ -7,6 +7,10 @@ DirectoryIndex index.html
 
 RewriteEngine On
 
+# Redirecciones permanentes de URLs WordPress retiradas hacia la home consolidada.
+# Se mantienen directas para evitar cadenas y conservar la señal SEO de migración.
+RewriteRule ^(?:seo-on-page|seo-off-page|sin-categoria|el-seo-on-page-y-el-seo-off-page|geo-la-evolucion-del-seo-en-la-era-de-la-ia|author/conde19ok|category/seo-off-page)/?$ https://www.condegraphics.com/ [R=301,L,NE]
+
 # Canonicaliza index.html, HTTP y el host sin www en una sola URL pública.
 RewriteCond %{THE_REQUEST} \s/+index\.html(?:[\s?]) [NC]
 RewriteRule ^index\.html$ https://www.condegraphics.com/ [R=301,L,NE]
