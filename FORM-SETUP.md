@@ -2,7 +2,7 @@
 
 ## Estado
 
-El código del formulario está preparado para usar **PHPMailer con SMTP Relay de Google Workspace**. La regla del relay autoriza la IP de Hostinger y no requiere usuario, contraseña de aplicación ni archivo privado adicional. Falta publicar este ajuste y ejecutar una prueba real de entrega.
+El código del formulario usa **Cloudflare Turnstile + PHPMailer con SMTP Relay de Google Workspace**. Turnstile funciona en modo Managed con apariencia `interaction-only`: el visitante normal no ve un paso adicional; sólo una interacción sospechosa puede mostrar una verificación. La regla SMTP autoriza la IP de Hostinger y no requiere usuario ni contraseña de aplicación. Falta cargar la Secret Key privada en Hostinger y ejecutar una prueba controlada.
 
 ## Por qué hace falta esta configuración
 
@@ -21,7 +21,31 @@ El dominio tiene sus registros MX en Google Workspace. Por eso, la configuració
 
 Google ofrece SMTP Relay (`smtp-relay.gmail.com`) para administradores de Workspace. En este proyecto se utiliza la autorización por IP, con TLS obligatorio, configurada en la regla `Formulario Web Conde Graphics`.
 
-## Paso 1: regla SMTP Relay ya configurada
+## Paso 1: configurar Turnstile
+
+El widget `Conde Graphics Contact Form` fue creado en la cuenta de Cloudflare que administra `condegraphics.com`, con estos hostnames:
+
+- `condegraphics.com`
+- `www.condegraphics.com`
+- `condegraphics.github.io`
+
+La Site Key pública está incluida en `index.html`. La Secret Key nunca se guarda en GitHub.
+
+En Hostinger, dentro de la misma carpeta que `contact.php`, crear el archivo privado `contact-config.php` con esta estructura:
+
+```php
+<?php
+
+return [
+    'turnstile_secret' => 'PEGAR_AQUI_LA_SECRET_KEY_PRIVADA',
+];
+```
+
+No incluir comillas adicionales ni espacios dentro de la clave. No enviar la clave por chat. El archivo está excluido mediante `.gitignore` y bloqueado para acceso web directo mediante `.htaccess`.
+
+El endpoint valida el token con `https://challenges.cloudflare.com/turnstile/v0/siteverify` antes de preparar o enviar el email. Comprueba `success`, la acción `contact` y el hostname autorizado. Si la validación falla, no se envía ningún correo.
+
+## Paso 2: regla SMTP Relay ya configurada
 
 En Google Admin quedó creada y habilitada la regla `Formulario Web Conde Graphics` con estas opciones:
 
@@ -33,11 +57,11 @@ En Google Admin quedó creada y habilitada la regla `Formulario Web Conde Graphi
 
 Los cambios de Google pueden tardar algunos minutos y, en algunos casos, hasta 24 horas.
 
-## Paso 2: configuración en Hostinger
+## Paso 3: configuración SMTP en Hostinger
 
-No hay que crear `contact-config.php` ni cargar contraseñas. El endpoint contiene únicamente los valores públicos del relay: servidor, puerto, TLS y autenticación desactivada. Si Hostinger sincroniza el repositorio, no debe agregarse ningún archivo privado adicional.
+El endpoint contiene los valores públicos del relay: servidor, puerto, TLS y autenticación desactivada. Además, necesita el archivo privado `contact-config.php` únicamente para la Secret Key de Turnstile. Si Hostinger sincroniza el repositorio, verificar que el archivo no versionado permanezca en la carpeta pública después de cada despliegue.
 
-## Paso 3: prueba controlada
+## Paso 4: prueba controlada
 
 1. Abrir `https://www.condegraphics.com/`.
 2. Completar el formulario con datos de prueba, no con un lead real.

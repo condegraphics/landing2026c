@@ -65,6 +65,42 @@ function show_error(string $message): void
     exit;
 }
 
+/**
+ * Valida el token de Turnstile exclusivamente desde el servidor.
+ * Nunca se registra el token ni la clave secreta en los logs.
+ */
+function validate_turnstile(string $token, string $secret): array
+{
+    if ($token === '' || $secret === '' || !function_exists('curl_init')) {
+        return ['success' => false, 'error-codes' => ['invalid-configuration']];
+    }
+
+    $curl = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+    curl_setopt_array($curl, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query([
+            'secret' => $secret,
+            'response' => $token,
+        ]),
+        CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 10,
+    ]);
+
+    $response = curl_exec($curl);
+    $curlError = curl_error($curl);
+    $httpCode = (int) curl_getinfo($curl, CURLINFO_HTTP_CODE);
+    curl_close($curl);
+
+    if ($response === false || $curlError !== '' || $httpCode < 200 || $httpCode >= 300) {
+        return ['success' => false, 'error-codes' => ['siteverify-request-failed']];
+    }
+
+    $decoded = json_decode($response, true);
+    return is_array($decoded) ? $decoded : ['success' => false, 'error-codes' => ['invalid-siteverify-response']];
+}
+
 // Rechaza envíos automatizados que completan el campo invisible.
 if (post_value('botcheck') !== '') {
     header('Location: ' . THANK_YOU_URL, true, 303);
@@ -81,6 +117,28 @@ $allowedOrigins = [
 if ($origin !== '' && !in_array($origin, $allowedOrigins, true)) {
     http_response_code(403);
     exit('Origen no autorizado.');
+}
+
+$turnstileConfigPath = __DIR__ . '/contact-config.php';
+$turnstileConfig = is_file($turnstileConfigPath) ? require $turnstileConfigPath : [];
+$turnstileSecret = is_array($turnstileConfig) ? (string) ($turnstileConfig['turnstile_secret'] ?? '') : '';
+$turnstileToken = post_value('cf-turnstile-response');
+$turnstileResult = validate_turnstile($turnstileToken, $turnstileSecret);
+$allowedTurnstileActions = ['contact'];
+$allowedTurnstileHostnames = [
+    'www.condegraphics.com',
+    'condegraphics.com',
+    'condegraphics.github.io',
+];
+$turnstileAction = is_string($turnstileResult['action'] ?? null) ? $turnstileResult['action'] : '';
+$turnstileHostname = is_string($turnstileResult['hostname'] ?? null) ? $turnstileResult['hostname'] : '';
+
+if (($turnstileResult['success'] ?? false) !== true
+    || !in_array($turnstileAction, $allowedTurnstileActions, true)
+    || !in_array($turnstileHostname, $allowedTurnstileHostnames, true)) {
+    $errorCodes = $turnstileResult['error-codes'] ?? ['verification-failed'];
+    error_log('Conde Graphics contact form: Turnstile validation failed: ' . json_encode($errorCodes, JSON_UNESCAPED_SLASHES));
+    show_error('No pudimos validar la verificación de seguridad. Volvé a intentarlo.');
 }
 
 $name = limit_text(post_value('name'), MAX_NAME_LENGTH);
