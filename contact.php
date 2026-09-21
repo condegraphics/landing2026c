@@ -109,8 +109,7 @@ if (!in_array($budget, $allowedBudgets, true)) {
     show_error('Seleccioná una opción válida de presupuesto.');
 }
 
-$subjectName = clean_header_value($name);
-$subjectText = 'Nueva consulta Web — ' . $subjectName;
+$subjectText = 'Consulta Online | Conde Graphics AI-FIRST SEO Agency Argentina';
 $replyToEmail = clean_header_value($email);
 
 $safeName = escape_html($name);
