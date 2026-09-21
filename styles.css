@@ -189,11 +189,13 @@
   .method-layout { align-items: start; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
   .method-image { position: relative; }
   .method-image img { box-shadow: var(--shadow-soft); height: auto; width: 100%; }
+  .method-content { min-width: 0; }
   .method-steps { border-top: 1px solid var(--gray-line); }
   .method-step { border-bottom: 1px solid var(--gray-line); display: grid; gap: 1.25rem; grid-template-columns: 2.2rem 1fr; padding: 1.55rem 0; }
   .step-number { color: var(--blue-day); font-family: var(--font-display); font-size: .8rem; font-weight: 300; }
   .method-step h3 { font-size: 1.25rem; margin-bottom: .35rem; }
   .method-step p { color: var(--gray-metal); font-size: .92rem; line-height: 1.5; }
+  .method-summary { color: var(--gray-metal); font-size: 16px; line-height: 1.55; margin-top: 2rem; }
 
   .web-section { padding: clamp(7rem, 12vw, 10rem) 0; }
   .web-grid { align-items: center; display: grid; gap: clamp(4rem, 9vw, 9rem); grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); }
