@@ -81,7 +81,7 @@ La revisión UX/UI de la composición corrigió tres causas de desalineación: e
 
 ## Tracking
 
-GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento. El formulario no depende de una plataforma externa: el HTML publica los datos por POST al endpoint propio `contact.php` alojado en Hostinger, que prepara una notificación multipart HTML + texto plano y redirige a `gracias.html` después de aceptar el envío. La entrega definitiva requiere validar en Hostinger el servidor de correo, SPF, DKIM y DMARC del dominio.
+GA4, Google Ads, Google Tag Manager y Meta quedan documentados como integración pendiente. No se incluyen scripts activos en esta versión porque el usuario indicó no agregar ni activar cookies o consentimiento. El formulario no depende de una plataforma externa: el HTML publica los datos por POST al endpoint propio `contact.php` alojado en Hostinger. El endpoint usa PHPMailer con SMTP autenticado, carga sus credenciales desde `contact-config.php` —excluido de Git—, prepara una notificación multipart HTML + texto plano y redirige a `gracias.html` después de aceptar el envío. La entrega requiere una cuenta remitente válida de Google Workspace, contraseña de aplicación u OAuth2, y la revisión de SPF, DKIM y DMARC del dominio.
 
 ## Formulario y contacto
 
@@ -89,7 +89,7 @@ El formulario de contacto prioriza una captura breve y ordenada: Nombre y Apelli
 
 En desktop, el bloque de contacto se distribuye en dos columnas 50/50: propuesta y texto a la izquierda, formulario a la derecha. Los valores del bloque de contacto alternativo usan una escala menor, `overflow-wrap` y un interlineado controlado para evitar choques entre email, teléfono y ubicación.
 
-El envío propio utiliza `https://www.condegraphics.com/contact.php`, asunto `Nueva consulta Web — [nombre]`, remitente `info@condegraphics.com`, `Reply-To` del potencial cliente y redirección a `gracias.html`. El correo usa tablas, estilos inline, paleta azul institucional y una parte alternativa de texto plano para mantener una lectura compatible con clientes de correo que no renderizan HTML. El endpoint valida campos, email, presupuesto, longitud de entradas y honeypot antes de procesar el envío.
+El envío propio utiliza `https://www.condegraphics.com/contact.php`, asunto `Nueva consulta Web — [nombre]`, remitente `info@condegraphics.com`, `Reply-To` del potencial cliente y redirección a `gracias.html`. PHPMailer gestiona SMTP autenticado, tablas, estilos inline, paleta azul institucional y una parte alternativa de texto plano para mantener una lectura compatible con clientes de correo que no renderizan HTML. El endpoint valida campos, email, presupuesto, longitud de entradas y honeypot antes de procesar el envío. La configuración operativa se documenta en `FORM-SETUP.md`; las credenciales no se guardan en el repositorio.
 
 La Página web es opcional y se captura como texto con teclado de URL: acepta tanto dominios abreviados como URLs completas sin obligar a la persona a recordar `https://` ni bloquear el envío por un formato incompleto.
 

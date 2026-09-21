@@ -1,12 +1,14 @@
 <?php
 declare(strict_types=1);
 
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+
 /**
  * Endpoint propio de contacto para Hostinger.
  *
- * El envío utiliza la función mail() del servidor para mantener la solución
- * independiente de plataformas externas. Para producción, validar en Hostinger
- * la entrega, SPF, DKIM y DMARC del dominio antes de habilitar el formulario.
+ * El envío usa PHPMailer con SMTP autenticado. La configuración privada se
+ * carga desde contact-config.php, excluido de Git mediante .gitignore.
  */
 
 const RECIPIENT_EMAIL = 'info@condegraphics.com';
@@ -109,9 +111,7 @@ if (!in_array($budget, $allowedBudgets, true)) {
 
 $subjectName = clean_header_value($name);
 $subjectText = 'Nueva consulta Web — ' . $subjectName;
-$subject = '=?UTF-8?B?' . base64_encode($subjectText) . '?=';
 $replyToEmail = clean_header_value($email);
-$boundary = '=_CondeGraphics_' . bin2hex(random_bytes(12));
 
 $safeName = escape_html($name);
 $safeEmail = escape_html($email);
@@ -155,35 +155,47 @@ $html = '<!doctype html>'
     . '<tr><td style="padding:18px 32px;background-color:#f4f8fc;border-top:1px solid #d9e0e7;font-size:12px;line-height:18px;color:#53565a;">Este correo fue enviado desde el formulario de contacto de <a href="' . escape_html(SITE_URL) . '" style="color:#0073cb;">condegraphics.com</a>.</td></tr>'
     . '</table></td></tr></table></body></html>';
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: multipart/alternative; boundary="' . $boundary . '"',
-    'From: ' . SENDER_NAME . ' <' . SENDER_EMAIL . '>',
-    'Reply-To: ' . $replyToEmail,
-    'X-Mailer: Conde Graphics Web Form',
-];
+if (!is_file(__DIR__ . '/contact-config.php')) {
+    error_log('Conde Graphics contact form: missing contact-config.php.');
+    show_error('El formulario todavía no está conectado al servidor de correo.');
+}
 
-$body = '--' . $boundary . "\r\n"
-    . "Content-Type: text/plain; charset=UTF-8\r\n"
-    . "Content-Transfer-Encoding: 8bit\r\n\r\n"
-    . $plainText . "\r\n"
-    . '--' . $boundary . "\r\n"
-    . "Content-Type: text/html; charset=UTF-8\r\n"
-    . "Content-Transfer-Encoding: 8bit\r\n\r\n"
-    . $html . "\r\n"
-    . '--' . $boundary . "--\r\n";
+$smtpConfig = require __DIR__ . '/contact-config.php';
+if (!is_array($smtpConfig) || empty($smtpConfig['smtp_host']) || empty($smtpConfig['smtp_username']) || empty($smtpConfig['smtp_password'])) {
+    error_log('Conde Graphics contact form: invalid SMTP configuration.');
+    show_error('El formulario todavía no está conectado al servidor de correo.');
+}
 
-$sent = mail(
-    RECIPIENT_EMAIL,
-    $subject,
-    $body,
-    implode("\r\n", $headers),
-    '-f' . SENDER_EMAIL
-);
+require_once __DIR__ . '/lib/PHPMailer/Exception.php';
+require_once __DIR__ . '/lib/PHPMailer/PHPMailer.php';
+require_once __DIR__ . '/lib/PHPMailer/SMTP.php';
 
-if (!$sent) {
-    error_log('Conde Graphics contact form: mail() returned false.');
-    show_error('El servidor no pudo aceptar el envío en este momento. Probá nuevamente o escribinos por email.');
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+    $mail->Host = (string) $smtpConfig['smtp_host'];
+    $mail->SMTPAuth = true;
+    $mail->Username = (string) $smtpConfig['smtp_username'];
+    $mail->Password = (string) $smtpConfig['smtp_password'];
+    $mail->Port = (int) ($smtpConfig['smtp_port'] ?? 587);
+    $mail->SMTPSecure = (($smtpConfig['smtp_secure'] ?? 'tls') === 'ssl')
+        ? PHPMailer::ENCRYPTION_SMTPS
+        : PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->CharSet = 'UTF-8';
+    $mail->Timeout = 20;
+
+    $mail->setFrom(SENDER_EMAIL, SENDER_NAME);
+    $mail->addAddress(RECIPIENT_EMAIL, SENDER_NAME);
+    $mail->addReplyTo($email, $name);
+    $mail->Subject = $subjectText;
+    $mail->isHTML(true);
+    $mail->Body = $html;
+    $mail->AltBody = $plainText;
+    $mail->send();
+} catch (Exception $exception) {
+    error_log('Conde Graphics contact form: SMTP send failed: ' . $mail->ErrorInfo);
+    show_error('El servidor no pudo entregar el correo en este momento. Probá nuevamente o escribinos por email.');
 }
 
 header('Location: ' . THANK_YOU_URL, true, 303);
