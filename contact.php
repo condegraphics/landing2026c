@@ -7,8 +7,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 /**
  * Endpoint propio de contacto para Hostinger.
  *
- * El envío usa PHPMailer con SMTP autenticado. La configuración privada se
- * carga desde contact-config.php, excluido de Git mediante .gitignore.
+ * El envío usa PHPMailer con el SMTP Relay de Google Workspace. La regla de
+ * Google autoriza la IP de Hostinger y no se guardan credenciales en el sitio.
  */
 
 const RECIPIENT_EMAIL = 'info@condegraphics.com';
@@ -155,17 +155,6 @@ $html = '<!doctype html>'
     . '<tr><td style="padding:18px 32px;background-color:#f4f8fc;border-top:1px solid #d9e0e7;font-size:12px;line-height:18px;color:#53565a;">Este correo fue enviado desde el formulario de contacto de <a href="' . escape_html(SITE_URL) . '" style="color:#0073cb;">condegraphics.com</a>.</td></tr>'
     . '</table></td></tr></table></body></html>';
 
-if (!is_file(__DIR__ . '/contact-config.php')) {
-    error_log('Conde Graphics contact form: missing contact-config.php.');
-    show_error('El formulario todavía no está conectado al servidor de correo.');
-}
-
-$smtpConfig = require __DIR__ . '/contact-config.php';
-if (!is_array($smtpConfig) || empty($smtpConfig['smtp_host']) || empty($smtpConfig['smtp_username']) || empty($smtpConfig['smtp_password'])) {
-    error_log('Conde Graphics contact form: invalid SMTP configuration.');
-    show_error('El formulario todavía no está conectado al servidor de correo.');
-}
-
 require_once __DIR__ . '/lib/PHPMailer/Exception.php';
 require_once __DIR__ . '/lib/PHPMailer/PHPMailer.php';
 require_once __DIR__ . '/lib/PHPMailer/SMTP.php';
@@ -174,14 +163,10 @@ $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host = (string) $smtpConfig['smtp_host'];
-    $mail->SMTPAuth = true;
-    $mail->Username = (string) $smtpConfig['smtp_username'];
-    $mail->Password = (string) $smtpConfig['smtp_password'];
-    $mail->Port = (int) ($smtpConfig['smtp_port'] ?? 587);
-    $mail->SMTPSecure = (($smtpConfig['smtp_secure'] ?? 'tls') === 'ssl')
-        ? PHPMailer::ENCRYPTION_SMTPS
-        : PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Host = 'smtp-relay.gmail.com';
+    $mail->SMTPAuth = false;
+    $mail->Port = 587;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->CharSet = 'UTF-8';
     $mail->Timeout = 20;
 

@@ -2,61 +2,40 @@
 
 ## Estado
 
-El código del formulario está preparado para usar **PHPMailer con SMTP autenticado**. La publicación del código no incluye credenciales. Falta completar el archivo privado `contact-config.php` en Hostinger y ejecutar una prueba real de entrega.
+El código del formulario está preparado para usar **PHPMailer con SMTP Relay de Google Workspace**. La regla del relay autoriza la IP de Hostinger y no requiere usuario, contraseña de aplicación ni archivo privado adicional. Falta publicar este ajuste y ejecutar una prueba real de entrega.
 
 ## Por qué hace falta esta configuración
 
-La página HTML sólo recopila los datos. El envío se ejecuta en `contact.php`, dentro de Hostinger. La función PHP `mail()` aceptaba la solicitud, pero no garantizaba que Google Workspace aceptara o entregara el mensaje. PHPMailer conecta directamente con un servidor SMTP autenticado.
+La página HTML sólo recopila los datos. El envío se ejecuta en `contact.php`, dentro de Hostinger. La función PHP `mail()` aceptaba la solicitud, pero no garantizaba que Google Workspace aceptara o entregara el mensaje. PHPMailer conecta directamente con el SMTP Relay de Google mediante TLS y la autorización por IP configurada en Google Admin.
 
 El dominio tiene sus registros MX en Google Workspace. Por eso, la configuración recomendada es utilizar la cuenta remitente `info@condegraphics.com` mediante el servidor SMTP de Google:
 
 | Parámetro | Valor |
 |---|---|
-| Servidor | `smtp.gmail.com` |
+| Servidor | `smtp-relay.gmail.com` |
 | Puerto | `587` |
 | Seguridad | STARTTLS |
-| Usuario | `info@condegraphics.com` |
-| Contraseña | Contraseña de aplicación de Google, nunca la contraseña normal |
+| Usuario | No se utiliza |
+| Contraseña | No se utiliza |
 | Destinatario | `info@condegraphics.com` |
 
-Google también ofrece SMTP Relay (`smtp-relay.gmail.com`) para administradores de Workspace. Es una alternativa más avanzada, basada en autenticación por IP u OAuth2, y requiere configuración en la consola de administración.
+Google ofrece SMTP Relay (`smtp-relay.gmail.com`) para administradores de Workspace. En este proyecto se utiliza la autorización por IP, con TLS obligatorio, configurada en la regla `Formulario Web Conde Graphics`.
 
-## Paso 1: crear la contraseña de aplicación
+## Paso 1: regla SMTP Relay ya configurada
 
-1. Ingresar a la cuenta de Google Workspace de `info@condegraphics.com`.
-2. Verificar que esté activa la **Verificación en dos pasos**.
-3. Abrir la sección oficial de [Contraseñas de aplicación de Google](https://support.google.com/accounts/answer/185833).
-4. Crear una contraseña de aplicación para una aplicación identificada como `Conde Graphics Web`.
-5. Guardar la contraseña de aplicación de 16 caracteres en un administrador de contraseñas. No enviarla por chat, email ni GitHub.
+En Google Admin quedó creada y habilitada la regla `Formulario Web Conde Graphics` con estas opciones:
 
-Si Google no muestra la opción, la cuenta puede estar administrada con una política que la bloquea, tener Protección avanzada o usar una modalidad de verificación incompatible. En ese caso, un administrador de Google Workspace debe configurar SMTP Relay u OAuth2.
+- Remitentes: sólo las direcciones del dominio.
+- Autenticación: sólo aceptar correo desde la IP especificada de Hostinger.
+- Autenticación SMTP: desactivada.
+- Cifrado TLS: activado.
+- Servidor que utilizará el código: `smtp-relay.gmail.com:587`.
 
-## Paso 2: preparar el archivo privado en Hostinger
+Los cambios de Google pueden tardar algunos minutos y, en algunos casos, hasta 24 horas.
 
-Después de que el código se encuentre desplegado en Hostinger:
+## Paso 2: configuración en Hostinger
 
-1. Abrir **Hostinger → Websites → Administrar → File Manager**.
-2. Entrar en la carpeta pública del dominio, normalmente `public_html`.
-3. Crear un archivo llamado exactamente `contact-config.php`.
-4. Copiar la estructura siguiente y reemplazar sólo el valor de `smtp_password` con la contraseña de aplicación. No copiar la contraseña en el repositorio ni en este documento.
-
-```php
-<?php
-
-return [
-    'smtp_host' => 'smtp.gmail.com',
-    'smtp_port' => 587,
-    'smtp_secure' => 'tls',
-    'smtp_username' => 'info@condegraphics.com',
-    'smtp_password' => 'PEGAR_AQUI_LA_CONTRASEÑA_DE_APLICACION',
-];
-```
-
-5. Guardar el archivo en la misma carpeta donde se encuentra `contact.php`.
-6. Si Hostinger permite modificar permisos, usar permisos restrictivos para que sólo el usuario del sitio pueda leerlo, normalmente `600` o el nivel privado recomendado por Hostinger.
-7. No abrir el archivo desde el navegador para mostrarlo ni compartir una captura que incluya la contraseña. El `.htaccess` del proyecto bloquea el acceso web directo a `contact-config.php`.
-
-El archivo está excluido mediante `.gitignore`. Si una sincronización Git de Hostinger elimina archivos no versionados, volver a cargar `contact-config.php` después de cada despliegue o usar las variables de entorno privadas de Hostinger si están disponibles en el plan.
+No hay que crear `contact-config.php` ni cargar contraseñas. El endpoint contiene únicamente los valores públicos del relay: servidor, puerto, TLS y autenticación desactivada. Si Hostinger sincroniza el repositorio, no debe agregarse ningún archivo privado adicional.
 
 ## Paso 3: prueba controlada
 
@@ -72,6 +51,6 @@ Si no llega el mensaje, revisar el log de errores PHP de Hostinger. El endpoint 
 
 ## Seguridad y mantenimiento
 
-Las credenciales no se guardan en GitHub. El código utiliza PHPMailer 6.9.3, distribuido bajo LGPL-2.1, y conserva su archivo de licencia en `lib/PHPMailer/LICENSE`. La contraseña de aplicación puede revocarse desde Google sin modificar el formulario. No se debe activar el modo de depuración SMTP en producción porque podría exponer información del servidor.
+No se guardan credenciales en GitHub ni en Hostinger. El código utiliza PHPMailer 6.9.3, distribuido bajo LGPL-2.1, y conserva su archivo de licencia en `lib/PHPMailer/LICENSE`. La seguridad depende de la regla de Google Admin, la IP autorizada y TLS. No se debe activar el modo de depuración SMTP en producción porque podría exponer información del servidor.
 
 El formulario conserva la confirmación `gracias.html`, el honeypot, la validación del navegador y la validación server-side. El correo se genera como HTML con estilos inline y también incluye una parte de texto plano para clientes de correo que no renderizan HTML.
