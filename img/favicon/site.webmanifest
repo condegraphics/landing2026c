@@ -1,0 +1,16 @@
+{
+  "name": "Conde Graphics",
+  "short_name": "Conde Graphics",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#00215E",
+  "background_color": "#00215E",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
