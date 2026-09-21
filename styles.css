@@ -60,12 +60,12 @@
   .section-soft { background: var(--blue-pale); }
   .section-dark { background: var(--blue-night); color: var(--white); }
   .eyebrow { color: var(--blue-day); font-family: var(--font-display); font-size: .73rem; font-weight: 300; letter-spacing: .2em; line-height: 1.4; }
-  .eyebrow-light { color: #8DCAEF; }
+  .eyebrow-light { color: #4285F4; }
   .lead-copy { font-size: clamp(1.12rem, 1.7vw, 1.34rem); line-height: 1.55; }
   .keyword-accent { color: var(--blue-day); }
-  .keyword-accent-light { color: #8DCAEF; }
+  .keyword-accent-light { color: #4285F4; }
   .seo-emphasis { color: var(--blue-night); font-weight: 800; }
-  .section-dark .seo-emphasis { color: #8DCAEF; }
+  .section-dark .seo-emphasis { color: #4285F4; }
   .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: var(--blue-day); color: var(--white); padding: .75rem 1rem; border-radius: var(--radius-sm); font-weight: 300; }
   .skip-link:focus { top: 1rem; }
 }
@@ -142,7 +142,7 @@
   .service-card-top { align-items: center; display: flex; justify-content: space-between; margin-bottom: 4.25rem; }
   .service-number { color: var(--blue-day); font-family: var(--font-display); font-size: .83rem; font-weight: 300; }
   .service-tag { color: var(--gray-metal); font-family: var(--font-display); font-size: .62rem; font-weight: 300; letter-spacing: .16em; }
-  .service-card-featured .service-tag { color: #8DCAEF; }
+  .service-card-featured .service-tag { color: #4285F4; }
   .service-card h3 { font-size: clamp(1.7rem, 2.8vw, 2.45rem); margin-bottom: 1.6rem; max-width: 10ch; }
   .service-card p { color: var(--gray-metal); max-width: 31ch; }
   .service-card-featured p { color: rgba(255,255,255,.76); }
@@ -152,7 +152,7 @@
   .service-list li::before { background: var(--blue-day); content: ''; height: 4px; left: 0; position: absolute; top: .8rem; width: 4px; }
   .service-card-featured .service-list li { color: rgba(255,255,255,.78); }
   .card-link { align-self: stretch; font-size: .72rem; justify-content: center; margin-top: auto; text-align: center; }
-  .service-card-featured .card-link { color: #8DCAEF; }
+  .service-card-featured .card-link { color: #4285F4; }
   .card-link span { font-size: 1.2rem; padding-left: .45rem; }
 
   .benefits { padding: clamp(7rem, 12vw, 10.5rem) 0; }
@@ -181,7 +181,7 @@
   .ai-copy > p:not(.eyebrow) + p { color: rgba(255,255,255,.72); margin-top: 1.7rem; }
   .ai-principles { align-self: center; border-top: 1px solid rgba(255,255,255,.28); }
   .principle { border-bottom: 1px solid rgba(255,255,255,.28); display: grid; gap: 1.25rem; grid-template-columns: 2rem minmax(0, 1fr); padding: 1.65rem 0; }
-  .principle span { color: #8DCAEF; font-family: var(--font-display); font-size: .78rem; font-weight: 300; }
+  .principle span { color: #4285F4; font-family: var(--font-display); font-size: .78rem; font-weight: 300; }
   .principle h3 { font-size: 1.2rem; margin-bottom: .55rem; }
   .principle p { color: rgba(255,255,255,.68); font-size: .88rem; line-height: 1.5; }
 
@@ -214,7 +214,7 @@
   .agency-copy h2 { margin-bottom: 2.6rem; max-width: 100%; }
   .agency-copy > p:not(.eyebrow) + p { color: var(--gray-metal); margin-top: 1.7rem; }
   .agency-facts { border-top: 1px solid var(--gray-line); display: grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); margin-top: 3.5rem; padding-top: 1.5rem; }
-  .agency-facts strong { color: var(--blue-night); display: block; font-family: var(--font-display); font-size: 1.15rem; }
+  .agency-facts strong { color: var(--blue-night); display: block; font-family: var(--font-display); font-size: 16px; }
   .agency-facts span { color: var(--gray-metal); display: block; font-size: .75rem; margin-top: .2rem; }
 
   .faq { padding: clamp(7rem, 12vw, 10rem) 0; }
@@ -248,7 +248,7 @@
   .contact-line span { color: var(--gray-metal); font-family: var(--font-display); font-size: .62rem; font-weight: 300; letter-spacing: .14em; }
   .contact-line strong { color: var(--blue-night); font-family: var(--font-display); font-size: 1rem; font-weight: 300; }
   .contact-details .contact-line { border-color: rgba(255,255,255,.2); }
-  .contact-details .contact-line span { color: #8DCAEF; }
+  .contact-details .contact-line span { color: #4285F4; }
   .contact-details .contact-line strong { color: var(--white); font-size: .82rem; line-height: 1.35; overflow-wrap: anywhere; }
   .contact-map-link { text-decoration: none; }
   .contact-form { display: grid; gap: .8rem; margin-top: .5rem; }
@@ -477,7 +477,7 @@
   .web-collage { min-height: auto; }
   .web-collage .web-image { max-width: 32rem; }
   .agency-facts { gap: .5rem; }
-  .agency-facts strong { font-size: .95rem; }
+  .agency-facts strong { font-size: 16px; }
   .agency-facts span { font-size: .67rem; }
   .contact-panel { padding: 1.3rem; }
   .contact-details { padding: 1.3rem; }
@@ -500,7 +500,7 @@
 .thank-you-content h1 { color: var(--white); max-width: 11ch; }
 .thank-you-lead { color: rgba(255,255,255,.8); font-size: clamp(1.1rem, 1.8vw, 1.45rem); line-height: 1.55; margin-top: 2rem; max-width: 38ch; }
 .thank-you-meta { color: rgba(255,255,255,.64); margin-top: 1.25rem; max-width: 42ch; }
-.thank-you-meta strong { color: #8DCAEF; font-weight: 800; }
+.thank-you-meta strong { color: #4285F4; font-weight: 800; }
 .thank-you-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; }
 .thank-you-actions .button { min-width: 14rem; }
 @media (max-width: 680px) {
